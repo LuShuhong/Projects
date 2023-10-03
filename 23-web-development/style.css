@@ -7,10 +7,10 @@ p {
 }
 
 img {
-  width: 80%;
+  height: 10rem;
 }
 
-* {
+.education {
   display: flex;
   flex-direction: column;
   justify-content: center;
