@@ -1,9 +1,26 @@
-* {
-  color: aquamarine;
+body {
+  font-family: "Arial", sans-serif;
+  line-height: 1.6;
+  margin: 0;
+  padding: 0;
+  background-color: #f4f4f4;
+}
+
+.profile {
+  padding: 2rem;
+  background-color: #fff;
+  margin: 1rem;
+  border-radius: 8px;
+  box-shadow: 0px 0px 15px 1px rgba(0, 0, 0, 0.2);
+}
+
+h1,
+h2 {
+  color: tan;
 }
 
 h1 {
-  color: tan;
+  text-align: center;
 }
 
 p {
@@ -12,6 +29,13 @@ p {
 
 img {
   height: 10rem;
+  width: auto;
+  border-radius: 8px;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
 }
 
 .education {
@@ -19,4 +43,57 @@ img {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+}
+
+.education ul li {
+  margin: 1rem 0;
+}
+
+.experience table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 1rem 0;
+}
+
+.experience th,
+.experience td {
+  padding: 0.5rem;
+  border: 1px solid #ccc;
+}
+
+.skills {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
+
+.skills ul {
+  padding: 0;
+}
+
+.skills li {
+  background-color: #ddd;
+  margin: 0.5rem;
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+}
+
+.contact p {
+  margin: 0.5rem 0;
+}
+
+@media (max-width: 768px) {
+  .profile {
+    margin: 1rem 0.5rem;
+  }
+
+  img {
+    height: 8rem;
+  }
+
+  .skills li {
+    margin: 0.25rem;
+    padding: 0.25rem 0.5rem;
+  }
 }
