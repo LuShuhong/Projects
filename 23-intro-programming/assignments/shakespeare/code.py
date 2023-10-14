@@ -36,7 +36,8 @@ def words_and_freq(text):
     for i in text:
         if not i in word_dict:
              word_dict[i] = 1
-        word_dict[i] += 1
+        else:
+            word_dict[i] += 1
     return word_dict
 
 def most_common_word(text):
@@ -49,8 +50,9 @@ def uniq_words(text):
     return len(word_dict)
 
 
-def once_words():
-    words_and_freq()
+def once_words(text):
+    word_dict = words_and_freq(text)
+    print(word_dict)
     once_words_list=[]
     for i in word_dict:
         if word_dict[i] == 1:
