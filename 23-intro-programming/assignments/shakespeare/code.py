@@ -6,6 +6,7 @@ len(text)
 text[1:20]
 
 word_dict={}
+
 #longest word
 
 def longest_word(text):
@@ -28,15 +29,30 @@ def longest_palidrome():
 
     return longest_word(palidrome_list)
 
-def most_common_word():
+
+def words_and_freq():
+    global word_dict
+    word_dict = {}
     for i in text:
         if not i in word_dict:
-            word_dict[i] = 1
+             word_dict[i] = 1
         word_dict[i] += 1
 
 
+def most_common_word():
+    words_and_freq()
     return max(word_dict,key = lambda k: word_dict[k])
 
+
 def uniq_words():
-    most_common_word()
+    words_and_freq()
     return len(word_dict)
+
+
+def once_words():
+    words_and_freq()
+    once_words_list=[]
+    for i in word_dict:
+        if word_dict[i] == 1:
+            once_words_list.append(word_dict[i])
+    return once_words_list
