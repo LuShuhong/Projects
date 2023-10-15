@@ -60,6 +60,15 @@ if __name__ == "__main__":
     triangle3 = Triangle(4,5,6)
     square1 = Square(10)
 
+    all_shapes = [circle1, circle2,triangle1, triangle2 , triangle3, square1]
     print (circle1)
     print(triangle2)
     print(square1)
+# Why not printing out objects?
+    print(all_shapes)
+
+    total_area = 0
+    for shape in all_shapes:
+        total_area += shape.area()
+
+    print(total_area)
