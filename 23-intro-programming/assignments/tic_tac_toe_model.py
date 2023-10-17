@@ -80,7 +80,9 @@ class Game:
         while not self.has_winner() and  self.has_empty_space():
             self.user_play()
             self.computer_play()
+        self.end()
 
+    def end(self):
         continue_game = input("Enter any key to continue another game. Press Enter to quit")
         if bool(continue_game):
             self.board = [0] * 9
