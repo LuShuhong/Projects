@@ -12,12 +12,17 @@ class Game:
        
        #print(self.board)
 
-    def state(self):
-        pass
 
     #what if user input invalid row and column(e.g, row 4, column4, or a space that has already been filled)
-    def user_play(self,row,column):
+    def user_play(self):
+        row = int(input('Enter the row:  '))
+        column = int(input('Enter the column:  '))
         list_position = (row - 1)*3 + column -1
+        while self.board[list_position] != 0:
+            print("The space has already been taken")
+            row = int(input('Enter the row:  '))
+            column = int(input('Enter the column:  '))
+            list_position = (row - 1)*3 + column -1
         self.board[list_position] = 1
         return self.board
 
@@ -73,9 +78,7 @@ class Game:
     
     def play(self):
         while not self.has_winner() and  self.has_empty_space():
-            row = int(input('Enter the row:  '))
-            column = int(input('Enter the column:  '))
-            self.user_play(row,column)
+            self.user_play()
             self.computer_play()
 
         continue_game = input("Enter any key to continue another game. Press Enter to quit")
