@@ -1,0 +1,74 @@
+* {
+  box-sizing: border-box;
+}
+
+.keys {
+  display: grid;
+  justify-content: center;
+  /* margin: 5rem; */
+  /* padding: 2rem; */
+  grid-template-rows: repeat(5, 10vh);
+  grid-template-columns: repeat(4, 15vw);
+  /* background-color: rgb(120, 120, 171); */
+}
+
+/* .operations {
+  background-color: aqua;
+}
+
+.number {
+  background-color: rgb(61, 145, 30);
+} */
+
+/* #division {
+  grid-row: 2/2;
+  grid-column: 1/1;
+} */
+
+#multiplication,
+#minus,
+#addition,
+#addition,
+#equal {
+  grid-column: 4;
+}
+
+#seven,
+#eight,
+#nine {
+  grid-row: 2;
+}
+
+#four,
+#five,
+#six {
+  grid-row: 3;
+}
+
+#one,
+#two,
+#three {
+  grid-row: 4;
+}
+
+#zero {
+  grid-area: 5/1/5/3;
+}
+
+#decimal {
+  grid-row: 5;
+}
+
+#calculator-display {
+  display: flex;
+  justify-content: flex-end;
+  width: 60vw;
+  padding: 0.5rem;
+  border: thick double;
+  border-color: rgb(120, 120, 171);
+}
+
+.display {
+  display: flex;
+  justify-content: center;
+}
