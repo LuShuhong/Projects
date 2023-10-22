@@ -44,4 +44,5 @@ operationButtons.forEach((button) => {
 equalButton.addEventListener("click", () => {
   displayNumber = eval(displayNumber);
   updateDisplay();
+  displayNumber = "0";
 });
