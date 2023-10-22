@@ -12,14 +12,22 @@ const updateDisplay = () => {
 
 numberButtons.forEach((button) => {
   button.addEventListener("click", () => {
-    displayNumber = Number(button.innerText);
+    if (displayNumber === "0") {
+      displayNumber = button.innerText;
+    } else {
+      append(button.innerText);
+    }
     updateDisplay();
   });
 });
 
 const clear = () => {
-  displayNumber = 0;
+  displayNumber = "0";
   updateDisplay();
 };
 
 clearButton.addEventListener("click", () => clear());
+
+const append = (input) => {
+  displayNumber = displayNumber + input;
+};
