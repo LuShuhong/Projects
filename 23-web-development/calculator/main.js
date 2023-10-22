@@ -1,6 +1,8 @@
 const numberButtons = document.querySelectorAll("[data-number]");
+const operationButtons = document.querySelectorAll("[data-operation]");
 const display = document.getElementById("calculator-display");
 const clearButton = document.getElementById("AC");
+const equalButton = document.getElementById("equal");
 
 let displayNumber = "0";
 
@@ -31,3 +33,15 @@ clearButton.addEventListener("click", () => clear());
 const append = (input) => {
   displayNumber = displayNumber + input;
 };
+
+operationButtons.forEach((button) => {
+  button.addEventListener("click", () => {
+    append(button.innerText);
+    updateDisplay();
+  });
+});
+
+equalButton.addEventListener("click", () => {
+  displayNumber = eval(displayNumber);
+  updateDisplay();
+});
