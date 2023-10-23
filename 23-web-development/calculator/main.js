@@ -34,6 +34,7 @@ const append = (input) => {
   displayNumber = displayNumber + input;
 };
 
+// what if the user clicks operation more than once?
 operationButtons.forEach((button) => {
   button.addEventListener("click", () => {
     append(button.innerText);
