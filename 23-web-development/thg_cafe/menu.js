@@ -30,4 +30,32 @@ id,item,cost,category,allergens
 28,Salad,6,side,
 `;
 
+const menuArray = menu.split("\n");
 
+const parse = (inputString) => {
+  const splitString = inputString.split(",");
+  if (inputString.length < 2) {
+    return null;
+  }
+  return splitString;
+};
+
+// const parsedMenu = menuArray.reduce((accumulator, currentValue) => {
+//   const item = parse(currentValue);
+//   if (item !== null) {
+//     return accumulator.push(item);
+//   }
+//   return accumulator;
+// }, []);
+
+// const parsedMenu = menuArray.map(parse);
+
+const parsedMenu = menuArray.reduce((accumulator, currentValue) => {
+  let item = parse(currentValue);
+  if (item !== null) {
+    return [...accumulator, item];
+  }
+  return accumulator;
+}, []);
+
+console.log(parsedMenu);
