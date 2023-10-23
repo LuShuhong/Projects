@@ -37,18 +37,16 @@ const parse = (inputString) => {
   if (inputString.length < 2) {
     return null;
   }
-  return splitString;
+  const [id, itemName, cost, category, allergens] = inputString.split(",");
+
+  return {
+    id,
+    itemName,
+    cost: Number(cost),
+    category,
+    allergens,
+  };
 };
-
-// const parsedMenu = menuArray.reduce((accumulator, currentValue) => {
-//   const item = parse(currentValue);
-//   if (item !== null) {
-//     return accumulator.push(item);
-//   }
-//   return accumulator;
-// }, []);
-
-// const parsedMenu = menuArray.map(parse);
 
 const parsedMenu = menuArray.reduce((accumulator, currentValue) => {
   let item = parse(currentValue);
@@ -58,4 +56,10 @@ const parsedMenu = menuArray.reduce((accumulator, currentValue) => {
   return accumulator;
 }, []);
 
-console.log(parsedMenu);
+parsedMenu.sort((a, b) => {
+  return a.cost - b.cost;
+});
+
+const drink = parsedMenu.filter((item) => item.category == "drink").slice(-1);
+
+console.log(drink);
