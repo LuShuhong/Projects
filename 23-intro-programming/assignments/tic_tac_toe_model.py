@@ -21,8 +21,10 @@ class Game:
         symbol = {0: '   ', 1: " X ", 2: " O "}
         board_symbol = [symbol[val] for val in self.board]
 
-        print (f"{board_symbol[0]}|{board_symbol[1]}|{board_symbol[2]}\n-----------\n{board_symbol[3]}|{board_symbol[4]}|{board_symbol[5]}\n-----------\n{board_symbol[6]}|{board_symbol[7]}|{board_symbol[8]} ")
-        
+        game_board = f"{board_symbol[0]}|{board_symbol[1]}|{board_symbol[2]}\n-----------\n{board_symbol[3]}|{board_symbol[4]}|{board_symbol[5]}\n-----------\n{board_symbol[6]}|{board_symbol[7]}|{board_symbol[8]} "
+
+        print (game_board)
+        return game_board
         
 
     #what if user input invalid row and column(e.g, row 4, column4, or a space that has already been filled)
@@ -45,13 +47,14 @@ class Game:
                 row = int(input('Enter the row:  '))
                 column = int(input('Enter the column:  '))
                 list_position = (row - 1)*3 + column -1
+                if row <= 3 and column <= 3 and self.board[list_position] == 0:
+                    user_play = False
+                else: 
+                    print("Not a valid cell")
             except ValueError as e:
                 print("Please enter valid number")
 
-            if row <= 3 and column <= 3 and self.board[list_position] == 0:
-                user_play = False
-            else: 
-                print("Not a valid cell")
+           
             
             # try:
             #     self.board[list_position]
