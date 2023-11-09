@@ -6,32 +6,33 @@ const equalButton = document.getElementById("equal");
 
 let displayNumber = "0";
 
-const updateDisplay = () => {
+const updateDisplay = (displayNumber) => {
   display.textContent = displayNumber;
 };
 
 // updateDisplay();
 
 numberButtons.forEach((button) => {
-  button.addEventListener("click", () => {
+  button.addEventListener("click", (e) => {
     if (displayNumber === "0") {
-      displayNumber = button.innerText;
+      displayNumber = e.target.innerText;
     } else {
-      append(button.innerText);
+      append(e.target.innerText);
     }
     updateDisplay();
   });
 });
 
 const clear = () => {
-  displayNumber = "0";
-  updateDisplay();
+  // displayNumber = "0";
+  updateDisplay("0");
 };
 
 clearButton.addEventListener("click", () => clear());
 
 const append = (input) => {
-  displayNumber = displayNumber + input;
+  updateDisplay(`${displayNumber}${input}`);
+  // displayNumber = displayNumber + input;
 };
 
 // what if the user clicks operation more than once?
@@ -44,6 +45,8 @@ operationButtons.forEach((button) => {
 
 equalButton.addEventListener("click", () => {
   displayNumber = eval(displayNumber);
-  updateDisplay();
+  updateDisplay(displayNumber);
   displayNumber = "0";
 });
+
+// try es6 class

@@ -12,6 +12,11 @@
   /* background-color: rgb(120, 120, 171); */
 }
 
+.numbers {
+  display: contents;
+
+}
+
 /* .operations {
   background-color: aqua;
 }
@@ -24,6 +29,9 @@
   grid-row: 2/2;
   grid-column: 1/1;
 } */
+
+/* grid template */
+
 
 #multiplication,
 #minus,
