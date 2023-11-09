@@ -1,0 +1,18 @@
+.board {
+  width: 25px;
+  height: 25px;
+  border: 1.5px solid rgba(255, 255, 255, 0.535);
+  border-radius: 5px;
+  margin: 3px;
+  padding: 8px;
+}
+
+.whole-board {
+  /* display: grid;
+  margin: 50px;
+  justify-content: center;
+  grid-template-rows: repeat(5, 60px);
+  grid-template-columns: repeat(5, 60px); */
+  display: flex;
+  justify-content: center;
+}
