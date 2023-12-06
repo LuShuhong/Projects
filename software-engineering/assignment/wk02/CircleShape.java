@@ -2,11 +2,7 @@ package wk02;
 
 public abstract class CircleShape implements Shape {
     private String shape = "Circle";
-    private double radius;
-
-    public CircleShape(double radius){
-        this.radius = radius;
-    }
+    private double radius = 30;
 
     public String getShape() {
         return shape;

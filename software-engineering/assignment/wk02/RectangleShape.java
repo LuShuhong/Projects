@@ -2,13 +2,9 @@ package wk02;
 
 public abstract class RectangleShape implements Shape{
         private String shape = "Rectangle";
-        private double length;
-        private double width;
+        private double length=40;
+        private double width=30;
 
-        public RectangleShape(double length, double width){
-            this.length = length;
-            this.width = width;
-        }
 
         public String getShape() {
             return shape;

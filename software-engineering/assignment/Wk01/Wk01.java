@@ -1,3 +1,5 @@
+package Wk01;
+
 public class Wk01 {
     public static void main(String[] args){
         int length = Integer.parseInt(args[0]);
