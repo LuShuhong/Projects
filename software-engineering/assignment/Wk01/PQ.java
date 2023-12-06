@@ -51,7 +51,7 @@ class StudentRepo{
     }
 
     public PriorityQueue<Student> getStudentNamePriorityQueue(){
-        PriorityQueue<Student> priorityQueue = new PriorityQueue<>(new NameComparator());
+        var priorityQueue = new PriorityQueue<Student>(Comparator.comparing((student -> student.getName())));
         for(Student student : students){
             priorityQueue.add(student);
         }
@@ -79,6 +79,7 @@ public class PQ{
 
 
         StudentRepo studentRepo = new StudentRepo(students);
+        /*loop to get things out */
         System.out.println(studentRepo.getStudentNamePriorityQueue());
         System.out.println(studentRepo.getStudentGPAPriorityQueue());
 

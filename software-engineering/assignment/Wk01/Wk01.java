@@ -28,6 +28,10 @@ public class Wk01 {
         Wk01.witcherFinder(args[1]);
     }
 
+    /*make a function take*/
+
+    /*side effect print*/
+
     public static boolean witcherFinder(String str){
         String lowerCaseStr = str.toLowerCase();
         int num = 0;
