@@ -1,8 +1,7 @@
-//package wk02;
-//
-//public class OnComingVehicle extends RectangleShape implements Sign {
-//    private final String message = "Oncoming vehicles in middle of road";
-//    private final String backgroundColor = "black";
-//    private final String fontColor = "white";
-//
-//}
+package wk02;
+
+public class OnComingVehicle extends RectangleShape {
+        public OnComingVehicle(){
+            super("Oncoming vehicles in middle of road","white","black");
+        }
+}

@@ -1,18 +1,16 @@
-//package wk02;
-//
-//public abstract class RectangleShape implements Shape{
-//        private String shape = "Rectangle";
-//        private double length=40;
-//        private double width=30;
-//
-//
-//        public String getShape() {
-//            return shape;
-//        }
-//
-//        public double getArea(){
-//            return length*width;
-//        }
-//    }
-//
+package wk02;
+
+public abstract class RectangleShape extends Shape{
+        private double length=40;
+        private double width=30;
+
+    public RectangleShape(String message, String backgroundColor, String fontColor){
+        super("Rectangle",message, backgroundColor, fontColor);
+    }
+
+        public double getArea(){
+            return length*width;
+        }
+    }
+
 
