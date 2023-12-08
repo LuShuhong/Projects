@@ -15,5 +15,12 @@ public class Main {
         System.out.println(speedLimitCircle.getBackgroundColor());
         System.out.println(speedLimitCircle.getMessage());
         System.out.println(speedLimitCircle.getShape());
+
+        GiveWay giveWay = new GiveWay();
+        System.out.println(giveWay.getArea());
+        System.out.println(giveWay.getFontColor());
+        System.out.println(giveWay.getBackgroundColor());
+        System.out.println(giveWay.getMessage());
+        System.out.println(giveWay.getShape());
     }
 }
