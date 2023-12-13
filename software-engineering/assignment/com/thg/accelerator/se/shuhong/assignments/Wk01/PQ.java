@@ -1,4 +1,4 @@
-package Wk01;
+package com.thg.accelerator.se.shuhong.assignments.Wk01;
 
 import java.util.Comparator;
 import java.util.PriorityQueue;

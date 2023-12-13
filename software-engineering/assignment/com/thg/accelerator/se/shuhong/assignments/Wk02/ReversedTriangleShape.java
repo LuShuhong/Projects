@@ -1,4 +1,4 @@
-package wk02;
+package com.thg.accelerator.se.shuhong.assignments.Wk02;
 
 public abstract class ReversedTriangleShape extends Shape {
     private double length = 30;

@@ -1,4 +1,4 @@
-package Wk01;
+package com.thg.accelerator.se.shuhong.assignments.Wk01;
 
 public class Wk01 {
     public static void main(String[] args){

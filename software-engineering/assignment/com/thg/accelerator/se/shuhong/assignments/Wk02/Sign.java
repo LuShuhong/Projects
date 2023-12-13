@@ -14,7 +14,7 @@
 //
 //}
 
-package wk02;
+package com.thg.accelerator.se.shuhong.assignments.Wk02;
 
 public interface Sign {
     String getMessage();
