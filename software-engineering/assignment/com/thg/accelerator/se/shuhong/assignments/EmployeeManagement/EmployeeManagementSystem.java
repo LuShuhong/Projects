@@ -9,20 +9,28 @@ public class EmployeeManagementSystem {
         this.employees = new ArrayList<>();
     }
 
-    public void addEmployee(Employee employee){
+    public void addEmployee(Employee employee) throws DuplicateEmployeeIdException{
+        for(Employee eachEmployee: employees){
+            if(eachEmployee.getEmployeeID()==employee.getEmployeeID()){
+                throw new DuplicateEmployeeIdException(employee.getEmployeeID());
+            }
+        }
         employees.add(employee);
     }
 
-    public Employee getEmployeeById(int id){
+    public Employee getEmployeeById(int id) throws NoSuchEmployeeException{
         for(Employee employee: employees){
             if(id == employee.getEmployeeID()){
                 return employee;
             }
         }
-        return null;//exception should be used
+        throw new NoSuchEmployeeException(Integer.toString(id));
     }
 
-    public double getTotalSalary(){
+    public double getTotalSalary() throws NoEmployeeToComputeException{
+        if(employees.size()==0){
+            throw new NoEmployeeToComputeException();
+        }
         double totalSalary = 0;
         for (Employee employee: employees){
             totalSalary += employee.getSalary();
@@ -30,7 +38,10 @@ public class EmployeeManagementSystem {
         return totalSalary;
     }
 
-    public double getAverageSalaryByRole(String role){
+    public double getAverageSalaryByRole(String role) throws NoEmployeeToComputeException{
+        if(employees.size()==0){
+            throw new NoEmployeeToComputeException();
+        }
         double roleTotalSalary = 0;
         int roleTotalNumber = 0;
         for (Employee employee: employees){
@@ -39,7 +50,7 @@ public class EmployeeManagementSystem {
                 roleTotalNumber ++;
             }
         }
-        return roleTotalSalary ==0? 0: roleTotalSalary/roleTotalNumber;
+        return roleTotalSalary/roleTotalNumber;
     }
 
 
