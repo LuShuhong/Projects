@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="1fa6f741-e80f-49bd-9fa3-7b875941e3d4" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/../../Hello.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.idea/assignment.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.idea/uiDesigner.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../assignment.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../com/thg/accelerator/se/shuhong/assignments/EmployeeManagement/DuplicateEmployeeIdException.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../com/thg/accelerator/se/shuhong/assignments/EmployeeManagement/Employee.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../com/thg/accelerator/se/shuhong/assignments/EmployeeManagement/EmployeeManagementSystem.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../com/thg/accelerator/se/shuhong/assignments/EmployeeManagement/NoEmployeeToComputeException.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../com/thg/accelerator/se/shuhong/assignments/EmployeeManagement/NoSuchEmployeeException.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../com/thg/accelerator/se/shuhong/assignments/Wk01/PQ.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Wk01/PQ.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../com/thg/accelerator/se/shuhong/assignments/Wk01/Wk01.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Wk01/Wk01.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../com/thg/accelerator/se/shuhong/assignments/Wk02/CircleShape.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Wk02/CircleShape.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../com/thg/accelerator/se/shuhong/assignments/Wk02/Duck.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Wk02/Duck.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../com/thg/accelerator/se/shuhong/assignments/Wk02/GiveWay.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Wk02/GiveWay.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../com/thg/accelerator/se/shuhong/assignments/Wk02/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Wk02/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../com/thg/accelerator/se/shuhong/assignments/Wk02/OctagonShape.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Wk02/OctagonShape.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../com/thg/accelerator/se/shuhong/assignments/Wk02/OnComingVehicle.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Wk02/OnComingVehicle.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../com/thg/accelerator/se/shuhong/assignments/Wk02/RectangleShape.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Wk02/RectangleShape.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../com/thg/accelerator/se/shuhong/assignments/Wk02/ReducedSpeedNow.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Wk02/ReducedSpeedNow.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../com/thg/accelerator/se/shuhong/assignments/Wk02/ReversedTriangleShape.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Wk02/ReversedTriangleShape.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../com/thg/accelerator/se/shuhong/assignments/Wk02/Shape.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Wk02/Shape.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../com/thg/accelerator/se/shuhong/assignments/Wk02/Sign.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Wk02/Sign.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../com/thg/accelerator/se/shuhong/assignments/Wk02/SpeedLimitCircle.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Wk02/SpeedLimitCircle.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../com/thg/accelerator/se/shuhong/assignments/Wk02/Stop.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Wk02/Stop.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../com/thg/accelerator/se/shuhong/assignments/Wk02/TriangleShape.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Wk02/TriangleShape.java" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ExternalProjectsData">
+    <projectState path="$PROJECT_DIR$">
+      <ProjectState />
+    </projectState>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../../.." />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProjectId" id="2ZVHsLOA33k9PZ99NyW1jLWm7Qn" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/Users/shuhong.lu95/Desktop/2023 Accelerator /2023-user-shuhong-lu/software-engineering/assignment/build-tools-demo&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;
+  }
+}</component>
+  <component name="RunManager">
+    <configuration name="BuildDemo" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.thg.accelerator.BuildDemo" />
+      <module name="build-tools-demo.main" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.thg.accelerator.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.BuildDemo" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="1fa6f741-e80f-49bd-9fa3-7b875941e3d4" name="Changes" comment="" />
+      <created>1702500531304</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1702500531304</updated>
+      <workItem from="1702500532383" duration="154000" />
+      <workItem from="1702501299646" duration="236000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+</project>
