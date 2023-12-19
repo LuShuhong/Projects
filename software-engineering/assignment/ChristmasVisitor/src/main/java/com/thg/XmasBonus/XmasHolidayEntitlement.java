@@ -23,6 +23,6 @@ public class XmasHolidayEntitlement implements XmasBonusVisitor {
 
     @Override
     public void visitHeadOfEngineering(HeadOfEngineering headOfEngineering) {
-        System.out.println("You are not entitled to 365 days off");
+        System.out.println("You are entitled to 365 days off");
     }
 }
