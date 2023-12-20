@@ -5,24 +5,26 @@ import com.thg.Employees.HeadOfEngineering;
 import com.thg.Employees.Manager;
 import com.thg.Employees.SoftwareEngineer;
 
-public class XmasHolidayEntitlement implements XmasBonusVisitor {
+public class XmasHolidayEntitlement implements XmasBonusVisitor<Integer> {
     @Override
-    public void visitAccelerator(Accelerator accelerator) {
-        System.out.println("You are not entitled to any Christmas Holiday");
+    public Integer visitAccelerator(Accelerator accelerator) {
+//        System.out.println("You are not entitled to any Christmas Holiday");
+        return 0;
     }
 
     @Override
-    public void visitSoftwareEngineer(SoftwareEngineer softwareEngineer) {
-        System.out.println("You are entitled to 5 days off");
+    public Integer visitSoftwareEngineer(SoftwareEngineer softwareEngineer) {
+//        System.out.println("You are entitled to 5 days off");
+        return 5;
     }
 
     @Override
-    public void visitManager(Manager manager) {
-        System.out.println("You are entitled to 10 days off");
+    public Integer visitManager(Manager manager) {
+        return 10;
     }
 
     @Override
-    public void visitHeadOfEngineering(HeadOfEngineering headOfEngineering) {
-        System.out.println("You are entitled to 365 days off");
+    public Integer visitHeadOfEngineering(HeadOfEngineering headOfEngineering) {
+        return 365;
     }
 }

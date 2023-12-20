@@ -2,7 +2,7 @@ package com.thg.Employees;
 
 import com.thg.XmasBonus.XmasBonusVisitor;
 
-public interface Employee {
+public interface Employee<T> {
     String getTitle();
-    void accept(XmasBonusVisitor v);
+     T accept(XmasBonusVisitor v);
 }

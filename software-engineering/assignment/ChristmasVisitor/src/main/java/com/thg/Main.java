@@ -19,10 +19,14 @@ public class Main {
         Manager manager = new Manager();
         HeadOfEngineering headOfEngineering = new HeadOfEngineering();
 
-        accelerator.accept(xmasGift);
-        softwareEngineer.accept(xmasGift);
-        manager.accept(xmasGift);
-        headOfEngineering.accept(xmasGift);
+        System.out.println(accelerator.accept(xmasGift));
+        System.out.println(softwareEngineer.accept(xmasGift));
+        System.out.println(manager.accept(xmasGift));
+        System.out.println(headOfEngineering.accept(xmasGift));
+//        accelerator.accept(xmasGift);
+//        softwareEngineer.accept(xmasGift);
+//        manager.accept(xmasGift);
+//        headOfEngineering.accept(xmasGift);
 
     }
 }

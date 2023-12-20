@@ -2,13 +2,13 @@ package com.thg.Employees;
 
 import com.thg.XmasBonus.XmasBonusVisitor;
 
-public class Accelerator implements Employee{
+public class Accelerator <T> implements Employee{
     public String getTitle(){
         return "Accelerator!";
     }
 
     @Override
-    public void accept(XmasBonusVisitor v) {
-        v.visitAccelerator(this);
+    public T accept(XmasBonusVisitor v) {
+        return (T) v.visitAccelerator(this);
     }
 }
