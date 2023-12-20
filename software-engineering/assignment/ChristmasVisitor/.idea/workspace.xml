@@ -10,20 +10,8 @@
       <change beforePath="$PROJECT_DIR$/.gradle/8.5/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/8.5/fileHashes/fileHashes.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/8.5/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/8.5/fileHashes/fileHashes.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/outputFiles.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/outputFiles.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/file-system.probe" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/file-system.probe" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/gradle.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/thg/Employees/Accelerator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/thg/Employees/Accelerator.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/thg/Employees/Employee.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/thg/Employees/Employee.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/thg/Employees/HeadOfEngineering.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/thg/Employees/HeadOfEngineering.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/thg/Employees/Manager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/thg/Employees/Manager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/thg/Employees/SoftwareEngineer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/thg/Employees/SoftwareEngineer.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/thg/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/thg/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/thg/XmasBonus/XmasBonusVisitor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/thg/XmasBonus/XmasBonusVisitor.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/thg/XmasBonus/XmasCashBonusEntitlement.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/thg/XmasBonus/XmasCashBonusEntitlement.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/thg/XmasBonus/XmasGift.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/thg/XmasBonus/XmasGift.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/thg/XmasBonus/XmasHolidayEntitlement.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/thg/XmasBonus/XmasHolidayEntitlement.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Marp/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/../Marp/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Marp/.gradle/buildOutputCleanup/cache.properties" beforeDir="false" afterPath="$PROJECT_DIR$/../Marp/.gradle/buildOutputCleanup/cache.properties" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Marp/.gradle/buildOutputCleanup/outputFiles.bin" beforeDir="false" afterPath="$PROJECT_DIR$/../Marp/.gradle/buildOutputCleanup/outputFiles.bin" afterDir="false" />
@@ -117,17 +105,18 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;last_opened_file_path&quot;: &quot;/Users/shuhong.lu95/Desktop/2023 Accelerator /2023-user-shuhong-lu/software-engineering/assignment/ChristmasVisitor&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "extract.method.default.visibility": "public",
+    "last_opened_file_path": "/Users/shuhong.lu95/Desktop/2023 Accelerator /2023-user-shuhong-lu/software-engineering/assignment/ChristmasVisitor",
+    "nodejs_package_manager_path": "npm",
+    "project.structure.last.edited": "Modules",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.2"
   }
-}</component>
+}]]></component>
   <component name="RunManager">
     <configuration name="com.thg.Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.thg.Main" />
@@ -160,7 +149,7 @@
       <workItem from="1702977906687" duration="5448000" />
       <workItem from="1702991832900" duration="742000" />
       <workItem from="1702992828048" duration="5218000" />
-      <workItem from="1703069668598" duration="7230000" />
+      <workItem from="1703069668598" duration="8288000" />
     </task>
     <servers />
   </component>

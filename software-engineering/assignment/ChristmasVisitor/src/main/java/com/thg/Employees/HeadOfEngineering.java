@@ -2,7 +2,7 @@ package com.thg.Employees;
 
 import com.thg.XmasBonus.XmasBonusVisitor;
 
-public class HeadOfEngineering <T> implements Employee<Object> {
+public class HeadOfEngineering implements Employee<Object> {
     public String getTitle(){
         return "Head of Engineering!";
     }
@@ -14,7 +14,7 @@ public class HeadOfEngineering <T> implements Employee<Object> {
 //}
 
     @Override
-    public T accept(XmasBonusVisitor v) {
-        return (T) v.visitHeadOfEngineering(this);
+    public Object accept(XmasBonusVisitor v) {
+        return v.visitHeadOfEngineering(this);
     }
 }

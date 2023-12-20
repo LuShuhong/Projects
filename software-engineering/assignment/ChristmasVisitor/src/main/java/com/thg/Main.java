@@ -23,6 +23,18 @@ public class Main {
         System.out.println(softwareEngineer.accept(xmasGift));
         System.out.println(manager.accept(xmasGift));
         System.out.println(headOfEngineering.accept(xmasGift));
+
+        System.out.println(accelerator.accept(xmasCashBonusEntitlement));
+        System.out.println(softwareEngineer.accept(xmasCashBonusEntitlement));
+        System.out.println(manager.accept(xmasCashBonusEntitlement));
+        System.out.println(headOfEngineering.accept(xmasCashBonusEntitlement));
+
+        System.out.println(accelerator.accept(xmasHolidayEntitlement));
+        System.out.println(softwareEngineer.accept(xmasHolidayEntitlement));
+        System.out.println(manager.accept(xmasHolidayEntitlement));
+        System.out.println(headOfEngineering.accept(xmasHolidayEntitlement));
+
+
 //        accelerator.accept(xmasGift);
 //        softwareEngineer.accept(xmasGift);
 //        manager.accept(xmasGift);
