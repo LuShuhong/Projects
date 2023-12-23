@@ -24,9 +24,10 @@ public class Main {
     }
 
     public static void getSlideStatistics(Slide slide){
+        System.out.println("Summary Statistics: ");
         System.out.println("Number of Slides: "+ slide.getNumberOfSlides());
         System.out.println("Number of Words: "+slide.getNumberOfWords());
-        System.out.println("Number of Headings: "+slide.getNumberOfHeadings());;
+        System.out.println("Number of Headings: "+slide.getHeadings());;
         System.out.println("Number of Images: "+slide.getNumberOfImages());
         slide.getIncorrectWords().forEach((key,value) ->{
             StringBuilder lineNumbersToPrint = new StringBuilder();

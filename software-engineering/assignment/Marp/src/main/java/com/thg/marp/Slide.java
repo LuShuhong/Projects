@@ -10,7 +10,7 @@ public class Slide {
 //    private Set<String> dictionarySet;
     private int numberOfWords;
     private int numberOfSlides;
-    private int numberOfHeadings;
+    private ArrayList<String> headings;
 
     private int numberOfImages;
     private Map<String,ArrayList<Integer>> incorrectWords;
@@ -21,7 +21,7 @@ public class Slide {
         this.numberOfWords =0;
         this.numberOfSlides = 0;
         this.incorrectWords= new LinkedHashMap<>();
-        this.numberOfHeadings = 0;
+        this.headings = new ArrayList<String>();
         this.numberOfImages =0;
     }
 
@@ -33,8 +33,8 @@ public class Slide {
         return numberOfSlides;
     }
 
-    public int getNumberOfHeadings() {
-        return numberOfHeadings;
+    public ArrayList<String> getHeadings() {
+        return headings;
     }
 
     public int getNumberOfImages() {
@@ -68,7 +68,7 @@ public class Slide {
                 }
 
                 if(headingPattern.matcher(line).matches()){
-                    numberOfHeadings ++;
+                    headings.add(line);
                 }
 
 
