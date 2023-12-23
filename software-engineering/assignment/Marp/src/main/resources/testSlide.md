@@ -118,8 +118,11 @@ FizzBuzz TDD
 - For multiples of three print "Fizz"
 - For multiples of five print "Buzz"
 - For multiples of three and five print "FizzBuzz"
-
+  
 ---
 ## Task
 
 Write tests for your Witcher Finder and one other project
+
+![image](https://avatars.githubusercontent.com/u/20685754?s=280&v=4)
+

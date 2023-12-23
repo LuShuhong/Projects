@@ -7,17 +7,22 @@ import java.util.regex.Pattern;
 
 public class Slide {
     private String slidePath;
-    private Set<String> dictionarySet;
+//    private Set<String> dictionarySet;
     private int numberOfWords;
     private int numberOfSlides;
-    private Map<String,Integer> incorrectWords;
+    private int numberOfHeadings;
 
-    public Slide(String slidePath, Set<String> dictionarySet){
+    private int numberOfImages;
+    private Map<String,ArrayList<Integer>> incorrectWords;
+
+    public Slide(String slidePath){
         this.slidePath = slidePath;
-        this.dictionarySet = dictionarySet;
+//        this.dictionarySet = dictionarySet;
         this.numberOfWords =0;
         this.numberOfSlides = 0;
-        this.incorrectWords= new HashMap<>();
+        this.incorrectWords= new LinkedHashMap<>();
+        this.numberOfHeadings = 0;
+        this.numberOfImages =0;
     }
 
     public int getNumberOfWords() {
@@ -28,13 +33,24 @@ public class Slide {
         return numberOfSlides;
     }
 
-    public Map<String, Integer> getIncorrectWords() {
+    public int getNumberOfHeadings() {
+        return numberOfHeadings;
+    }
+
+    public int getNumberOfImages() {
+        return numberOfImages;
+    }
+
+    public Map<String, ArrayList<Integer>> getIncorrectWords() {
         return incorrectWords;
     }
 
-    public void parseSlide() throws FileNotFoundException {
+
+    public void parseSlide(Set<String> dictionarySet) throws FileNotFoundException {
         Pattern wordPattern = Pattern.compile("\\b[a-zA-Z]+\\b");
         Pattern slideDelimiterPattern = Pattern.compile("^[-*_]{3,}$");
+        Pattern headingPattern = Pattern.compile("^#+ .*");
+        Pattern imagePattern = Pattern.compile("\\!\\[.*\\]\\(.*\\)");
 
         File myFile = new File(slidePath);
         int lineNumber = 0;
@@ -51,6 +67,12 @@ public class Slide {
                     numberOfSlides ++;
                 }
 
+                if(headingPattern.matcher(line).matches()){
+                    numberOfHeadings ++;
+                }
+
+
+
                 String[] tokens = line.split("\\s+");
 
                 for(String token: tokens){
@@ -59,10 +81,19 @@ public class Slide {
                         numberOfWords ++;
                         if(!dictionarySet.contains(token)){
 //                            System.out.println("Incorrectly spelled word " + token +" at line " + lineNumber);
-                            incorrectWords.put(token,lineNumber);
+//                            incorrectWords.put(token,lineNumber);
+                            if(incorrectWords.containsKey(token)){
+                                incorrectWords.get(token).add(lineNumber);
+                            } else {
+                                ArrayList<Integer> lineNumbers = new ArrayList<>();
+                                lineNumbers.add(lineNumber);
+                                incorrectWords.put(token,lineNumbers);
+                            }
                         }
                     }
-
+                    if(imagePattern.matcher(token).matches()){
+                        numberOfImages ++;
+                    }
 
                 }
                 }
@@ -75,6 +106,7 @@ public class Slide {
         }
 
 
-
     }
+
+
 }

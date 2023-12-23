@@ -15,7 +15,7 @@ public class Dictionary {
         this.dictionaryPath = dictionaryPath;
     }
 
-    public Set<String> parseDict() {
+    public Set<String> parseDict() throws FileNotFoundException {
         File myFile = new File(dictionaryPath);
         Set<String> words = new HashSet<>();
 
@@ -32,7 +32,8 @@ public class Dictionary {
                 }
             }catch(FileNotFoundException exception){
                 //should I decouple this printing line?
-                System.out.println("Default dictionary also not found");
+//                System.out.println("Default dictionary also not found");
+                throw new FileNotFoundException("No Dictionary is Found");
 
             }
 
