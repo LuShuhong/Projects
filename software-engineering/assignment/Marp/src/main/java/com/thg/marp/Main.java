@@ -1,6 +1,7 @@
 package com.thg.marp;
 
 import java.io.FileNotFoundException;
+import java.util.ArrayList;
 import java.util.Scanner;
 import java.util.Set;
 
@@ -21,13 +22,16 @@ public class Main {
         slide.parseSlide(words);
         getSlideStatistics(slide);
 
+        ArrayList<String> headingInfo= slide.getHeadings();
+        Contents.contentsGenerator(headingInfo);
     }
 
     public static void getSlideStatistics(Slide slide){
+        System.out.println();
         System.out.println("Summary Statistics: ");
         System.out.println("Number of Slides: "+ slide.getNumberOfSlides());
         System.out.println("Number of Words: "+slide.getNumberOfWords());
-        System.out.println("Number of Headings: "+slide.getHeadings());;
+//        System.out.println("Number of Headings: "+slide.getHeadings());;
         System.out.println("Number of Images: "+slide.getNumberOfImages());
         slide.getIncorrectWords().forEach((key,value) ->{
             StringBuilder lineNumbersToPrint = new StringBuilder();
