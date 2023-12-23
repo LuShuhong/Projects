@@ -28,5 +28,13 @@ public class Main {
         System.out.println("Number of Words: "+slide.getNumberOfWords());
         System.out.println("Number of Headings: "+slide.getNumberOfHeadings());;
         System.out.println("Number of Images: "+slide.getNumberOfImages());
+        slide.getIncorrectWords().forEach((key,value) ->{
+            StringBuilder lineNumbersToPrint = new StringBuilder();
+            for(int i=0;i<value.size()-1;i++){
+                lineNumbersToPrint.append(value.get(i)+", ");
+            }
+            lineNumbersToPrint.append(value.get(value.size()-1));
+            System.out.println("Misspelled word " +key + " in line " + lineNumbersToPrint);
+        });
     }
 }
