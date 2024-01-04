@@ -1,5 +1,5 @@
 package com.tictactoe.player;
 
 public interface Player {
-    void makeMove();
+    void makeMove(int xCoordinate, int yCoordinate);
 }

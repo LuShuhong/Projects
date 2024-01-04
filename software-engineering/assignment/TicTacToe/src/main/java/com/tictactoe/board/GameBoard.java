@@ -1,5 +1,6 @@
 package com.tictactoe.board;
 
+import com.tictactoe.game.Game;
 import com.tictactoe.player.Player;
 
 import java.lang.reflect.Array;
@@ -7,20 +8,25 @@ import java.util.ArrayList;
 
 public class GameBoard implements Board{
 
-    static int[][] gameBoardArray;
+    private int[][] gameBoardArray;
     private int row;
     private int column;
 
-    public GameBoard(int row, int column){
+    private static GameBoard instance;
+    private GameBoard(int row, int column){
         this.row = row;
         this.column = column;
-        gameBoardArray = new int[row][column];
+        this.gameBoardArray = new int[row][column];
+    }
+    public static GameBoard getInstance(int row, int column){
+        if(instance == null){
+            instance = new GameBoard(row,column);
+        }
+        return instance;
     }
 
 
-    public static void main(String[] args) {
-        System.out.println(new GameBoard(3,3));
-    }
+
     @Override
     public boolean isBoardFull() {
         for(int i = 0; i < row; i++){
@@ -98,6 +104,7 @@ public class GameBoard implements Board{
 
     @Override
     public int[][] markCell(int playerNumber, int xCoordinate, int yCoordinate) {
+        //move this check to Game? and handle exception?
         if(this.isCellEmpty(xCoordinate, yCoordinate) && !this.isBoardFull() && this.isValidCell(xCoordinate,yCoordinate)){
             gameBoardArray[xCoordinate-1][yCoordinate-1] = playerNumber;
         }
@@ -106,7 +113,7 @@ public class GameBoard implements Board{
 
     @Override
     public boolean isValidCell(int xCoordinate, int yCoordinate) {
-        if(xCoordinate>row || yCoordinate >column){
+        if(xCoordinate > row || yCoordinate > column){
             return false;
         }
         return true;
@@ -145,5 +152,4 @@ public class GameBoard implements Board{
         return cellValue == 1? " X ": " O ";
     }
 }
-
 
