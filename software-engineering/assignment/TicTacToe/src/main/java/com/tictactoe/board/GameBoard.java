@@ -25,6 +25,13 @@ public class GameBoard implements Board{
         return instance;
     }
 
+    public static GameBoard getInstance(){
+        if(instance == null){
+            instance = new GameBoard(3,3);
+        }
+        return instance;
+    }
+
 
 
     @Override
@@ -103,12 +110,27 @@ public class GameBoard implements Board{
     }
 
     @Override
+    public ArrayList<int[]> emptyCells(){
+        ArrayList<int[]> emptyCells = new ArrayList<>();
+        for(int i = 0; i<row; i++){
+            for(int j = 0; j< column; j++){
+                if(gameBoardArray[i][j] == 0 ){
+                    int[] emptyCellCoordinate = new int[]{i+1, j+1};
+                    emptyCells.add(emptyCellCoordinate);
+                }
+            }
+        }
+        return emptyCells;
+    }
+
+    @Override
     public int[][] markCell(int playerNumber, int xCoordinate, int yCoordinate) {
         //move this check to Game? and handle exception?
         if(this.isCellEmpty(xCoordinate, yCoordinate) && !this.isBoardFull() && this.isValidCell(xCoordinate,yCoordinate)){
             gameBoardArray[xCoordinate-1][yCoordinate-1] = playerNumber;
+            return gameBoardArray;
         }
-        return gameBoardArray;
+        throw new invalidCellException("This Cell has been Occupied!");
     }
 
     @Override
@@ -150,6 +172,12 @@ public class GameBoard implements Board{
             return "   ";
         }
         return cellValue == 1? " X ": " O ";
+    }
+
+    public static class invalidCellException extends RuntimeException {
+        public invalidCellException(String message){
+            super(message);
+        }
     }
 }
 

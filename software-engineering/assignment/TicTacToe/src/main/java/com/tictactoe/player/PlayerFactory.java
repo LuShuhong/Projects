@@ -1,14 +1,17 @@
 package com.tictactoe.player;
 
-import com.tictactoe.strategy.Strategy;
-
-import java.util.Locale;
 
 public class PlayerFactory {
-    public static Player getPlayer(String player){
+    public Player getPlayer(String player){
         player = player.toLowerCase();
         if(player == "human") return new HumanPlayer();
         if(player == "ai") return new AiPlayer();
         return null;
+    }
+
+    public String getPlayerFromPlayerNumber(int number){
+        if(number == 1) return "Human";
+        else if(number == 2) return "AI";
+        else return "Unknown Player";
     }
 }

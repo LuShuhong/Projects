@@ -10,14 +10,28 @@ public class AiPlayer implements Player{
     public AiPlayer(){
     }
 
-    public void setStrategy(Strategy strategy){
+    public void setStrategy(Strategy strategy) {
         this.strategy = strategy;
     }
 
-    @Override
-    public void makeMove(int xCoordinate, int yCoordinate) {
-        //Should it be controlled by Game class instead? Intuitively, players make move on the game board?
-        GameBoard gameBoard = GameBoard.getInstance(3, 3);
-        gameBoard.markCell(playerNumber,xCoordinate,yCoordinate);
+    private int[] executeStrategy(GameBoard gameBoard){
+        return strategy.decideMove(gameBoard);
     }
+
+    @Override
+    public void makeMove(GameBoard gameBoard, int xCoordinate, int yCoordinate) {
+        //ignoreXCoordinate and yCoordinate passed in
+        int [] cellToPlay = executeStrategy(gameBoard);
+        int cellToPlayXCoordinate = cellToPlay[0];
+        int cellToPlayYCoordinate = cellToPlay[1];
+        //Should it be controlled by Game class instead? Intuitively, players make move on the game board?
+        gameBoard.markCell(playerNumber,cellToPlayXCoordinate,cellToPlayYCoordinate);
+    }
+
+    @Override
+    public String getPlayerType() {
+        return "ai";
+    }
+
+
 }
