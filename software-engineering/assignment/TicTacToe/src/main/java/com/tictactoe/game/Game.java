@@ -1,11 +1,13 @@
 package com.tictactoe.game;
 
 import com.tictactoe.board.GameBoard;
+import com.tictactoe.command.Command;
 import com.tictactoe.player.Player;
 
 //this class seems excessive
 public class Game {
     private static Game instance;
+    private Command command;
 
     public static Game getInstance(){
         if(instance == null){
@@ -14,6 +16,9 @@ public class Game {
         return instance;
     }
 
+    public void executeCommand(Command command){
+        command.execute();
+    }
 
 
     public boolean isGameEnded(){

@@ -10,7 +10,7 @@ public class PlayerFactory {
     }
 
     public String getPlayerFromPlayerNumber(int number){
-        if(number == 1) return "Human";
+        if(number == 1) return "You";
         else if(number == 2) return "AI";
         else return "Unknown Player";
     }

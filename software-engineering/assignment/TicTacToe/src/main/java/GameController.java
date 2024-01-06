@@ -1,4 +1,5 @@
 import com.tictactoe.board.GameBoard;
+import com.tictactoe.command.Start;
 import com.tictactoe.game.Game;
 import com.tictactoe.player.Player;
 import com.tictactoe.player.PlayerFactory;
@@ -6,6 +7,7 @@ import com.tictactoe.strategy.EasyStrategy;
 import com.tictactoe.strategy.HardStrategy;
 import com.tictactoe.strategy.NormalStrategy;
 import com.tictactoe.strategy.Strategy;
+import com.tictactoe.command.Start;
 
 import java.util.Locale;
 import java.util.Scanner;
@@ -47,30 +49,7 @@ public class GameController {
         else if (humanPlayerOrder.equals("second")) currentPlayer = aiPlayer;
         else throw new invalidPlayOrderException("Please only enter 'first' or 'second'");
 
-        System.out.println(newGameBoard);
-
-        while(!game.isGameEnded()){
-            int row = 0;
-            int column=0;
-            if(currentPlayer == humanPlayer){
-                System.out.println("Enter the row you want to place your token");
-                String rowToPlay = scanner.nextLine();
-                System.out.println("Enter the column you want to place your token");
-                String columnToPlay = scanner.nextLine();
-                row = Integer.parseInt(rowToPlay);
-                column = Integer.parseInt(columnToPlay);
-            }
-            game.playMove(newGameBoard,currentPlayer,row,column);
-            System.out.println(newGameBoard);
-            currentPlayer = (currentPlayer == humanPlayer) ? aiPlayer : humanPlayer;
-        }
-
-        if(newGameBoard.hasWinner()){
-            System.out.println(playerFactory.getPlayerFromPlayerNumber(newGameBoard.isWinner()) + " has won!");
-        } else{
-            System.out.println("It's a draw");
-            
-        }
+        game.executeCommand(new Start(newGameBoard, humanPlayer,aiPlayer,currentPlayer));
 
     }
 
