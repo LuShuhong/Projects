@@ -1,5 +1,6 @@
 package com.tictactoe.board;
 
+import com.tictactoe.exception.Exception;
 import com.tictactoe.game.Game;
 import com.tictactoe.player.Player;
 
@@ -30,6 +31,10 @@ public class GameBoard implements Board{
             instance = new GameBoard(3,3);
         }
         return instance;
+    }
+
+    public int[][] getGameBoardArray(){
+        return gameBoardArray;
     }
 
 
@@ -130,7 +135,7 @@ public class GameBoard implements Board{
             gameBoardArray[xCoordinate-1][yCoordinate-1] = playerNumber;
             return gameBoardArray;
         }
-        throw new invalidCellException("This Cell has been Occupied!");
+        throw new Exception.invalidCellException("This Cell has been Occupied!");
     }
 
     @Override
@@ -174,10 +179,6 @@ public class GameBoard implements Board{
         return cellValue == 1? " X ": " O ";
     }
 
-    public static class invalidCellException extends RuntimeException {
-        public invalidCellException(String message){
-            super(message);
-        }
-    }
+
 }
 
