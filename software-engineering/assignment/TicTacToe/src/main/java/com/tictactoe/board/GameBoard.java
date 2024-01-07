@@ -180,5 +180,11 @@ public class GameBoard implements Board{
     }
 
 
+    //this is not good, is there a way to modify it
+    public void setStartingArray(int[][] startingArray){
+        this.gameBoardArray = startingArray;
+    }
+
+
 }
 

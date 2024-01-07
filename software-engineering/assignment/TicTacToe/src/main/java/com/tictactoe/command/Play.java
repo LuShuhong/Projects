@@ -9,37 +9,31 @@ import com.tictactoe.strategy.EasyStrategy;
 import com.tictactoe.strategy.HardStrategy;
 import com.tictactoe.strategy.NormalStrategy;
 import com.tictactoe.strategy.Strategy;
-import com.tictactoe.command.Save;
 
 import java.util.Scanner;
 
-public class StartGame implements Command {
+public class Play implements Command {
     private Game game;
     private GameBoard gameBoard;
     private Player humanPlayer;
     private Player aiPlayer;
     private Player currentPlayer;
+    private String difficulty;
     private Strategy strategy;
     private PlayerFactory playerFactory= new PlayerFactory();
 
 
-    public StartGame(Game game,GameBoard gameBoard, Player humanPlayer, Player aiPlayer){
+    public Play(Game game, GameBoard gameBoard, String difficulty, Player humanPlayer, Player aiPlayer, Player currentPlayer){
         this.game = game;
         this.gameBoard = gameBoard;
+        this.difficulty = difficulty;
         this.humanPlayer = humanPlayer;
         this.aiPlayer = aiPlayer;
+        this.currentPlayer = currentPlayer;
     }
 
     @Override
     public void execute() {
-        System.out.println("\nWorld's Best Tic-Tac-Toe Game\n");
-        System.out.println("Select Difficulty Level(easy/normal/hard)");
-        Scanner scanner = new Scanner(System.in);
-        String difficulty = scanner.nextLine();
-        difficulty = difficulty.toLowerCase();
-
-        System.out.println(difficulty.toUpperCase() + " level selected");
-
         if(difficulty.equals("easy") ){
             strategy = new EasyStrategy();
         } else if (difficulty.equals("normal")) {
@@ -50,14 +44,8 @@ public class StartGame implements Command {
             throw new Exception.inValidDifficultyException("Please only enter the difficulty level provided");
         }
 
+        Scanner scanner = new Scanner(System.in);
         aiPlayer.setStrategy(strategy);
-        System.out.println("Do you want to play first or second");
-        String humanPlayerOrder = scanner.nextLine().toLowerCase();
-
-        if(humanPlayerOrder.equals("first")) currentPlayer = humanPlayer;
-        else if (humanPlayerOrder.equals("second")) currentPlayer = aiPlayer;
-        else throw new Exception.invalidPlayOrderException("Please only enter 'first' or 'second'");
-
         System.out.println(gameBoard);
 
         while(!game.isGameEnded()){

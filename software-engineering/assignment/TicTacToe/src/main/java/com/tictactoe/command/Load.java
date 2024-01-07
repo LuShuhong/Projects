@@ -3,16 +3,18 @@ package com.tictactoe.command;
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.tictactoe.board.GameBoard;
+import com.tictactoe.game.Game;
+import com.tictactoe.player.Player;
+import com.tictactoe.player.PlayerFactory;
 
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.Map;
 import java.util.Scanner;
 
-public class Load {
+public class Load implements Command{
     private GameBoard gameBoard;
 
     public ArrayList<Map<String,int[][]>> readFromTxt() {
@@ -65,9 +67,17 @@ public class Load {
         return null;
     }
 
-    public void load(){
+
+    @Override
+    public void execute() {
         int[][] recordArray = getRecordArray(chooseRecord());
-
+        PlayerFactory playerFactory = new PlayerFactory();
+        Player humanPlayer = playerFactory.getPlayer("human");
+        Player aiPlayer = playerFactory.getPlayer("ai");
+        Player currentPlayer = humanPlayer;
+        Game game = Game.getInstance();
+        GameBoard gameBoard = GameBoard.getInstance();
+        gameBoard.setStartingArray(recordArray);
+        game.executeCommand(new Play(game,gameBoard,"easy",humanPlayer,aiPlayer,currentPlayer));
     }
-
 }
