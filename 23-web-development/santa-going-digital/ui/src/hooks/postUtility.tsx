@@ -1,4 +1,7 @@
-interface PostData {}
+export interface PostData {
+}
+
+
 
 export const postFunction = async (url: string, postData: PostData) => {
   try {

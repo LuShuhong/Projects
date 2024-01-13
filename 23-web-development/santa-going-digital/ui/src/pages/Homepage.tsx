@@ -3,9 +3,8 @@ import "./Homepage.css";
 import { Button } from "../components/button/Button";
 import { Product } from "../components/product/Product";
 
-interface Props {}
 
-export const Homepage: React.FC<Props> = (props) => {
+export const Homepage: React.FC = () => {
   return (
     <>
       <div className="App">
