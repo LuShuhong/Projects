@@ -1,5 +1,6 @@
 import React from "react";
 import "./CreateList.css";
+import { postFunction } from "../hooks/postUtility";
 
 interface Props {
   urlToSend: string;
@@ -7,12 +8,29 @@ interface Props {
 
 
 export const CreateList: React.FC<Props> = (props) => {
+
+  const currentDate = new Date().toLocaleDateString();
+
+  const handleSubmit = async(event: React.FormEvent) => {
+    event.preventDefault();
+    const form = event.target as HTMLFormElement;
+    const formData = new FormData(form);
+    const jsonObject: Record<string, string | File> = {};
+    formData.forEach((value, key) => { jsonObject[key] = value; });
+
+    await postFunction(props.urlToSend, jsonObject)
+  }
+
   return (
     <div className="creation-page">
       <h1 className="create-list-heading">Tell Santa your List</h1>
-      <form action={props.urlToSend} method="post">
+      <form onSubmit={handleSubmit}>
         <ul>
-          
+
+        <li>
+            <label htmlFor="date">Date:</label>
+            <input type="text" id="date" name="created_at" value={currentDate} readOnly />
+          </li>
 
           <li>
             <label htmlFor="name">Name:</label>
@@ -35,7 +53,7 @@ export const CreateList: React.FC<Props> = (props) => {
           </li>
 
           <li className="submit-button">
-            <button type="submit">Send your message</button>
+            <button type="submit">Send your message!</button>
           </li>
         </ul>
       </form>

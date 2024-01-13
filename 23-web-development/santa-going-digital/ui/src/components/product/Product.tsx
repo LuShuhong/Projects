@@ -35,9 +35,9 @@ export const Product: React.FC<productProps> = (props) => {
       <img alt={props.imageKey} src={`${data}`} />
       <p>{props.title}</p>
       {props.star ? <p>Star rating: {star}</p> : null}
-      <div className="image-button">
+      {/* <div className="image-button">
         <Button text="Add to List as Guest" path=""></Button>
-      </div>
+      </div> */}
     </div>
   );
 };

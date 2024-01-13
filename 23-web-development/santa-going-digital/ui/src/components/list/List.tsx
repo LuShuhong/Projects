@@ -18,7 +18,8 @@ export interface listInterface{
     created_at : string;
     from : string;
     message_for_santa : string;
-    behaviour_score : number;item_names : productInterface[];
+    behaviour_score : number;
+    item_names : productInterface[];
     id : string;
 }
 
