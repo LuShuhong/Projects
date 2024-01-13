@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
-import { Product } from "../components/product/Product";
+import { productInterface } from "../components/product/Product";
+import { listInterface } from "../components/list/List";
 
 // interface Props{
 //     url:string;
@@ -8,7 +9,7 @@ import { Product } from "../components/product/Product";
 
 export const useFetch = (
   url: string
-): { data: Product[] | undefined; loading: boolean; error: Error | null } => {
+): { data: productInterface[] | listInterface[] | undefined; loading: boolean; error: Error | null } => {
   const [data, setData] = useState();
   const [loading, setLoading] = useState<boolean>(false);
   const [error, setError] = useState<Error | null>(null);

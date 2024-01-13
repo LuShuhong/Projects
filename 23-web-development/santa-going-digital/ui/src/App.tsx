@@ -5,7 +5,9 @@ import "./App.css";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import { Homepage } from "./pages/Homepage";
 import { ProductsPage } from "./pages/ProductsPage";
-import {MyWishList} from "./pages/MyWishList";
+import {MyWishList} from "./pages/MyLists";
+import { CreateList } from "./pages/CreateList";
+
 
 function App() {
   return (
@@ -16,7 +18,9 @@ function App() {
       
         <Route path="/products" element={<ProductsPage pathToGetItems= "/items" baseUrl="/img"/>}></Route>
 
-        <Route path="/my-wishlist" element={<MyWishList pathToGetLists= "/lists" />}></Route>
+        <Route path="/my-lists" element={<MyWishList pathToGetLists= "/lists" />}></Route>
+
+        <Route path="/create-list" element={<CreateList />}></Route>
       
       </Routes>
     </BrowserRouter>

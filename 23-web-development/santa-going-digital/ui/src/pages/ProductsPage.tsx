@@ -2,6 +2,7 @@ import React from "react";
 import "./ProductsPage.css";
 import { useFetch } from "../hooks/useFetch";
 import { Product } from "../components/product/Product";
+import { productInterface } from "../components/product/Product";
 
 interface productPageProps {
   baseUrl: string;
@@ -13,18 +14,22 @@ export const ProductsPage: React.FC<productPageProps> = (props) => {
   if (loading) return <p>Loading...</p>;
   if (error) return <p>Error: {error.message}</p>;
 
-  if (products) {
+  const isProductArray = (array: any[]): array is productInterface[] => {
+    return array.every(item => item.image_key!== undefined);
+  };
+
+  if (products && isProductArray(products)) {
     return (
       <div className="image-tile">
         {products.map((product) => {
-          return (
-            <Product
-              url={props.baseUrl}
-              imageKey={`${product.image_key}`}
-              title={product.title}
-              star={product.star_rating}
-            ></Product>
-          );
+            return (
+              <Product
+                url={props.baseUrl}
+                imageKey={`${product.image_key}`}
+                title={product.title}
+                star={product.star_rating}
+              ></Product>
+            );
         })}
         ;
       </div>
