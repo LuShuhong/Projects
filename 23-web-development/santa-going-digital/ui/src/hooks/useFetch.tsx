@@ -9,7 +9,11 @@ import { listInterface } from "../components/list/List";
 
 export const useFetch = (
   url: string
-): { data: productInterface[] | listInterface[] | undefined; loading: boolean; error: Error | null } => {
+): {
+  data: productInterface[] | undefined;
+  loading: boolean;
+  error: Error | null;
+} => {
   const [data, setData] = useState();
   const [loading, setLoading] = useState<boolean>(false);
   const [error, setError] = useState<Error | null>(null);

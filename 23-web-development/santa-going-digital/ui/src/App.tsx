@@ -20,7 +20,7 @@ function App() {
 
         <Route path="/my-lists" element={<MyWishList pathToGetLists= "/lists" />}></Route>
 
-        <Route path="/create-list" element={<CreateList />}></Route>
+        <Route path="/create-list" element={<CreateList urlToSend="/lists"/>}></Route>
       
       </Routes>
     </BrowserRouter>

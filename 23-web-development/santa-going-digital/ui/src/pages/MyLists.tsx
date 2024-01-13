@@ -8,30 +8,25 @@ interface myWishListProps {
 }
 
 export const MyWishList: React.FC<myWishListProps> = (props) => {
-  // const [lists, setList] = useState<listInterface[]>([]);
+  const [lists, setList] = useState<listInterface[]>([]);
 
-  // const fetchLists = async (url: string): Promise<void> => {
-  //   try {
-  //     const response = await fetch(props.pathToGetLists);
-  //     const jsonResponse = await response.json();
-  //     setList(jsonResponse);
-  //   } catch (error) {
-  //     console.error(error);
-  //   }
-  // };
+  const fetchLists = async (url: string): Promise<void> => {
+    try {
+      const response = await fetch(props.pathToGetLists);
+      const jsonResponse = await response.json();
+      setList(jsonResponse);
+    } catch (error) {
+      console.error(error);
+    }
+  };
 
-  // useEffect(() => {
-  //   fetchLists(props.pathToGetLists);
-  // }, [lists]);
-
-  const {data:lists} = useFetch(props.pathToGetLists);
-
-  const isListArray = (array: any[]): array is listInterface[] => {
-    return array.every(item => item.from !== undefined);
-  }
+  useEffect(() => {
+    fetchLists(props.pathToGetLists);
+  }, [lists]);
 
 
-  if (lists && isListArray(lists)) {
+
+  if (lists) {
     return (
       <div className="lists">
         <h1 className="heading">My Lists</h1>

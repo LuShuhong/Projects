@@ -14,11 +14,7 @@ export const ProductsPage: React.FC<productPageProps> = (props) => {
   if (loading) return <p>Loading...</p>;
   if (error) return <p>Error: {error.message}</p>;
 
-  const isProductArray = (array: any[]): array is productInterface[] => {
-    return array.every(item => item.image_key!== undefined);
-  };
-
-  if (products && isProductArray(products)) {
+  if (products ) {
     return (
       <div className="image-tile">
         {products.map((product) => {
