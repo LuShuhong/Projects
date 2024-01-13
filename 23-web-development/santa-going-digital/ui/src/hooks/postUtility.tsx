@@ -1,4 +1,9 @@
 export interface PostData {
+    // created_at: string;
+    // from:string;
+    // behaviour_score:string;
+    // message_for_santa:string;
+    // item_names:string
 }
 
 
