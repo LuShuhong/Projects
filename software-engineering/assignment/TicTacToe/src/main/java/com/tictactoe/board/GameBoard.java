@@ -185,6 +185,14 @@ public class GameBoard implements Board{
         this.gameBoardArray = startingArray;
     }
 
+    public void reset() {
+        for(int i = 0; i < row; i++){
+            for(int j = 0; j < column; j++){
+                gameBoardArray[i][j] =0;
+            }
+        }
+    }
+
 
 }
 

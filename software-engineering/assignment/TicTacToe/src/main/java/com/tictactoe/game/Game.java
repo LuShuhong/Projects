@@ -30,5 +30,8 @@ public class Game {
         player.makeMove(gameBoard,xCoordinate,yCoordinate);
     }
 
+    public void gameReset(){
+        GameBoard.getInstance().reset();
+    }
 
 }

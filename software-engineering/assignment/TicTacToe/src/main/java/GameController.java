@@ -7,6 +7,8 @@ import com.tictactoe.player.Player;
 import com.tictactoe.player.PlayerFactory;
 import com.tictactoe.strategy.Strategy;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Scanner;
 
 public class GameController {
@@ -18,6 +20,7 @@ public class GameController {
         Player aiPlayer = playerFactory.getPlayer("ai");
         Strategy strategy;
         Player currentPlayer;
+        
 
         if(humanPlayer == null || aiPlayer == null) throw new Exception.playerNotFoundException("Cannot create player");
 
