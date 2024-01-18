@@ -11,6 +11,8 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
+
+//return true or false directly
 public class GameController {
     public static void main(String[] args) {
         Game game = Game.getInstance();

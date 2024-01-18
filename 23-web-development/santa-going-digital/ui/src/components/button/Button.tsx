@@ -7,16 +7,16 @@ interface Props {
   path:string;
 }
 
-export const Button: React.FC<Props> = (props) => {
+export const Button: React.FC<Props> = ({path,text}) => {
   let navigate = useNavigate();
 
   const handleClick =(event:MouseEvent<HTMLButtonElement>):void =>{
-    navigate(props.path)
+    navigate(path)
   }
 
   return (
     <button className="button" role="button" onClick={handleClick}>
-      {props.text}
+      {text}
     </button>
   );
 };

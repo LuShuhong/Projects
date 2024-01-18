@@ -33,6 +33,7 @@ public class GameBoard implements Board{
         return instance;
     }
 
+    //return a copy
     public int[][] getGameBoardArray(){
         return gameBoardArray;
     }
@@ -68,8 +69,7 @@ public class GameBoard implements Board{
 
     @Override
     public boolean hasWinner() {
-        if(isWinner() != 0) return true;
-        return false;
+        return isWinner()!=0;
     }
 
 
@@ -108,10 +108,7 @@ public class GameBoard implements Board{
 
     @Override
     public boolean isCellEmpty(int xCoordinate, int yCoordinate) {
-        if(gameBoardArray[xCoordinate-1][yCoordinate-1] == 0){
-            return true;
-        }
-        return false;
+        return gameBoardArray[xCoordinate - 1][yCoordinate - 1] == 0;
     }
 
     @Override
@@ -140,10 +137,7 @@ public class GameBoard implements Board{
 
     @Override
     public boolean isValidCell(int xCoordinate, int yCoordinate) {
-        if(xCoordinate > row || yCoordinate > column){
-            return false;
-        }
-        return true;
+        return xCoordinate <= row && yCoordinate <= column;
     }
 
 

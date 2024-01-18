@@ -63,6 +63,7 @@ public class Play implements Command {
                 String columnToPlay = scanner.nextLine();
                 column = Integer.parseInt(columnToPlay);
             }
+            
             game.playMove(gameBoard,currentPlayer,row,column);
             System.out.println(gameBoard);
             currentPlayer = (currentPlayer == humanPlayer) ? aiPlayer : humanPlayer;

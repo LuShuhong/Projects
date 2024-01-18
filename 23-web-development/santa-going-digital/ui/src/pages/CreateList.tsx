@@ -11,7 +11,6 @@ export const CreateList: React.FC<Props> = (props) => {
   const currentDate = new Date().toLocaleDateString();
 
   const handleSubmit = async (event: React.FormEvent) => {
-    event.preventDefault();
     const form = event.target as HTMLFormElement;
     const formData = new FormData(form);
     const jsonObject: Record<string, string | File> = {};

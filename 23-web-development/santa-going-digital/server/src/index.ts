@@ -22,13 +22,31 @@ app.get("/lists", (req: Request, res: Response) => {
 });
 
 app.post("/lists", (req: Request, res: Response) => {
+
+  const { created_at, from, behaviour_score, message_for_santa, item_names } = req.body;
+
+  if (
+    typeof created_at !== 'string' ||
+    typeof from !== 'string' ||
+    typeof behaviour_score !== 'string' ||
+    typeof message_for_santa !== 'string' ||
+    typeof item_names !== 'string'
+  ) {
+    return res.status(400).json({ error: "Invalid or missing fields. All fields must be strings." });
+  }
+
+  
+try{
   const { body } = req;
-  // TODO: fix dangerous code...
-  const newItem = database.addList(body);
-
+  const newItem = database.
+  addList(body);
   res.appendHeader("Location", `/lists/${newItem.id}`);
-
   res.status(201).json(newItem);
+} catch(error) {
+  console.error(error);
+    return res.status(500).json({ error: "Internal Server Error" });
+}
+  
 });
 
 app.delete("/lists/:id", (req: Request, res: Response) => {
