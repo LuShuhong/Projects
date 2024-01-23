@@ -13,9 +13,11 @@ import static org.springframework.hateoas.server.mvc.WebMvcLinkBuilder.methodOn;
 @RestController
 public class TaskController {
     private final TaskRepository taskRepository;
+    private final TaskModelAssembler taskModelAssembler;
 
-    TaskController(TaskRepository taskRepository) {
+    TaskController(TaskRepository taskRepository, TaskModelAssembler taskModelAssembler) {
         this.taskRepository = taskRepository;
+        this.taskModelAssembler = taskModelAssembler;
     }
 
     @GetMapping("/tasks")
