@@ -1,8 +1,12 @@
 package com.thg.rest;
 
+import org.springframework.hateoas.EntityModel;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+
+import static org.springframework.hateoas.server.mvc.WebMvcLinkBuilder.linkTo;
+import static org.springframework.hateoas.server.mvc.WebMvcLinkBuilder.methodOn;
 
 @RestController
 public class TaskController {
@@ -23,8 +27,12 @@ public class TaskController {
     }
 
     @GetMapping("/tasks/{id}")
-    public Task one(@PathVariable Long id) {
-        return taskRepository.findById(id).orElseThrow( () -> new TaskNotFoundException(id));
+    public EntityModel<Task> one(@PathVariable Long id) {
+        Task task = taskRepository.findById(id)
+                .orElseThrow( () -> new TaskNotFoundException(id));
+        return EntityModel.of(task, //
+                linkTo(methodOn(TaskController.class).one(id)).withSelfRel(),
+                linkTo(methodOn(TaskController.class).all()).withRel("tasks"));
     }
 
     @PutMapping("/tasks/{id}")
