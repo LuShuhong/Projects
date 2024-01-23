@@ -22,14 +22,11 @@ public class TaskController {
 
     @GetMapping("/tasks")
     public CollectionModel<EntityModel<Task>> all() {
-
-        List<EntityModel<Task>> tasks = taskRepository.findAll().stream()
-                .map(task -> EntityModel.of( task,
-                        linkTo(methodOn(TaskController.class).one(task.getId())).withSelfRel(),
-                        linkTo(methodOn(TaskController.class).all()).withRel("tasks")))
+        List<EntityModel<Task>> tasks = taskRepository.findAll().stream() //
+                .map(taskModelAssembler::toModel) //
                 .collect(Collectors.toList());
 
-        return CollectionModel.of(tasks,linkTo(methodOn(TaskController.class).all()).withSelfRel());
+        return CollectionModel.of(tasks, linkTo(methodOn(TaskController.class).all()).withSelfRel());
     }
 
     @PostMapping("/tasks")
@@ -39,11 +36,10 @@ public class TaskController {
 
     @GetMapping("/tasks/{id}")
     public EntityModel<Task> one(@PathVariable Long id) {
-        Task task = taskRepository.findById(id)
-                .orElseThrow( () -> new TaskNotFoundException(id));
-        return EntityModel.of(task, //
-                linkTo(methodOn(TaskController.class).one(id)).withSelfRel(),
-                linkTo(methodOn(TaskController.class).all()).withRel("tasks"));
+        Task task = taskRepository.findById(id) //
+                .orElseThrow(() -> new TaskNotFoundException(id));
+
+        return taskModelAssembler.toModel(task);
     }
 
     @PutMapping("/tasks/{id}")
