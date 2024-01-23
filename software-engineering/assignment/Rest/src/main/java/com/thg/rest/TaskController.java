@@ -1,9 +1,11 @@
 package com.thg.rest;
 
+import org.springframework.hateoas.CollectionModel;
 import org.springframework.hateoas.EntityModel;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.stream.Collectors;
 
 import static org.springframework.hateoas.server.mvc.WebMvcLinkBuilder.linkTo;
 import static org.springframework.hateoas.server.mvc.WebMvcLinkBuilder.methodOn;
@@ -17,8 +19,15 @@ public class TaskController {
     }
 
     @GetMapping("/tasks")
-    public List<Task> all() {
-        return taskRepository.findAll();
+    public CollectionModel<EntityModel<Task>> all() {
+
+        List<EntityModel<Task>> tasks = taskRepository.findAll().stream()
+                .map(task -> EntityModel.of( task,
+                        linkTo(methodOn(TaskController.class).one(task.getId())).withSelfRel(),
+                        linkTo(methodOn(TaskController.class).all()).withRel("tasks")))
+                .collect(Collectors.toList());
+
+        return CollectionModel.of(tasks,linkTo(methodOn(TaskController.class).all()).withSelfRel());
     }
 
     @PostMapping("/tasks")
