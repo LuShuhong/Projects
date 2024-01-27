@@ -1,0 +1,63 @@
+SELECT publisher.publisher_name, COUNT(superhero.id) AS number_of_superhero
+FROM superhero 
+LEFT JOIN publisher ON superhero.publisher_id = publisher.id
+GROUP BY publisher.publisher_name 
+ORDER BY number_of_superhero DESC;
+
+
+select s.superhero_name, count(1) AS c
+from hero_power hp 
+right join superhero s on hp.hero_id = s.id
+group by s.superhero_name 
+order by count(1) desc;
+
+
+select s.superhero_name 
+from superhero s 
+join
+(select hp.hero_id from hero_power hp join superpower sp on sp.id = hp.power_id where sp.power_name ='Flight') flight
+on flight.hero_id = s.id 
+join
+(select hp.hero_id from hero_power hp join superpower sp on sp.id = hp.power_id where sp.power_name ='Stamina') stamina
+on flight.hero_id = stamina.hero_id
+join
+(select hp.hero_id from hero_power hp join superpower sp on sp.id = hp.power_id where sp.power_name ='Magnetism') magnetism
+on magnetism.hero_id = stamina.hero_id
+
+
+select s.id, superhero_name, sMarksmanship.hero_id from superhero s
+join
+(select hp.hero_id from superpower sp join hero_power hp on sp.id = hp.power_id  where power_name = 'Flight') sFlight
+on s.id = sFlight.hero_id
+join
+(select hp.hero_id from superpower sp join hero_power hp on sp.id = hp.power_id  where power_name = 'Stamina') sStamina
+on s.id  = sStamina.hero_id
+left join
+(select hp.hero_id from superpower sp join hero_power hp on sp.id = hp.power_id  where power_name = 'Marksmanship') sMarksmanship
+on s.id = sMarksmanship.hero_id
+where sMarksmanship.hero_id is null;
+
+
+
+select s.superhero_name 
+from superhero s 
+join colour eye_colour ON eye_colour.id = s.eye_colour_id 
+join colour skin_colour on  skin_colour.id = s.skin_colour_id 
+where eye_colour.colour = 'Purple' and skin_colour.colour = 'Green';
+
+
+select p.publisher_name, avg(s.height_cm) as avg_height
+from superhero s
+join publisher p on p.id = s.publisher_id
+group by p.publisher_name
+order by avg_height desc;
+
+select s.superhero_name, c.colour 
+from superhero s 
+join
+(select publisher_id, max(weight_kg) as max
+from superhero s 
+where weight_kg is not null and weight_kg >0
+group by s.publisher_id) maxhero
+on s.publisher_id = maxhero.publisher_id and maxhero.max = s.weight_kg 
+left join colour c on c.id = s.eye_colour_id;
