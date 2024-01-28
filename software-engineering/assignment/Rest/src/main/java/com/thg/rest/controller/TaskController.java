@@ -1,5 +1,9 @@
-package com.thg.rest;
+package com.thg.rest.controller;
 
+import com.thg.rest.service.Task;
+import com.thg.rest.TaskModelAssembler;
+import com.thg.rest.TaskNotFoundException;
+import com.thg.rest.repositaory.TaskRepository;
 import org.springframework.hateoas.CollectionModel;
 import org.springframework.hateoas.EntityModel;
 import org.springframework.web.bind.annotation.*;
@@ -60,7 +64,5 @@ public class TaskController {
     public void deleteEmployee(@PathVariable Long id) {
         taskRepository.deleteById(id);
     }
-
-
 
 }

@@ -1,5 +1,6 @@
 package com.thg.rest;
 
+import com.thg.rest.repositaory.TaskRepository;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 

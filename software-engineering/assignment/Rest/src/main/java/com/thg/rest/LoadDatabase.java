@@ -1,5 +1,7 @@
 package com.thg.rest;
 
+import com.thg.rest.repositaory.TaskRepository;
+import com.thg.rest.service.Task;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.boot.CommandLineRunner;

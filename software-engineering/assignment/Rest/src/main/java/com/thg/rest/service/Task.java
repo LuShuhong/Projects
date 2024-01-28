@@ -1,4 +1,4 @@
-package com.thg.rest;
+package com.thg.rest.service;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -13,7 +13,7 @@ public class Task {
 
     public Task(){};
 
-    Task(String task, boolean isComplete) {
+    public Task(String task, boolean isComplete) {
         this.task = task;
         this.isComplete = isComplete;
     }
