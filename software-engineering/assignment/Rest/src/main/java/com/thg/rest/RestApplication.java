@@ -1,6 +1,7 @@
 package com.thg.rest;
 
 import com.thg.rest.repositaory.TaskRepository;
+import com.thg.rest.service.TaskModelAssembler;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 

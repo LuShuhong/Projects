@@ -1,8 +1,8 @@
-package com.thg.rest;
+package com.thg.rest.service;
 
 //import jdk.incubator.foreign.CLinker;
 import com.thg.rest.controller.TaskController;
-import com.thg.rest.service.Task;
+import com.thg.rest.domain.Task;
 import org.springframework.hateoas.EntityModel;
 import org.springframework.hateoas.server.RepresentationModelAssembler;
 import org.springframework.stereotype.Component;

@@ -1,5 +1,6 @@
 package com.thg.rest.service;
 
+import com.thg.rest.domain.Task;
 import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -9,8 +10,9 @@ public class TaskTest {
     public void testTaskConstructorAndGetters() {
         String expectedTask = "Sample Task";
         boolean expectedIsComplete = true;
+        int expectedPriority = 3;
 
-        Task task = new Task(expectedTask, expectedIsComplete);
+        Task task = new Task(expectedTask, expectedIsComplete, expectedPriority);
 
         assertEquals(expectedTask, task.getTask());
         assertEquals(expectedIsComplete, task.getIsComplete());

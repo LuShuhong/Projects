@@ -2,8 +2,8 @@ package com.thg.rest.controller;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.thg.rest.repositaory.TaskRepository;
-import com.thg.rest.service.Task;
-import com.thg.rest.TaskModelAssembler;
+import com.thg.rest.domain.Task;
+import com.thg.rest.service.TaskModelAssembler;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
