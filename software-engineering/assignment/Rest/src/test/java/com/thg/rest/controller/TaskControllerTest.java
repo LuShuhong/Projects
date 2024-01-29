@@ -14,9 +14,6 @@ import org.springframework.http.MediaType;
 import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.setup.MockMvcBuilders;
 
-import java.util.Optional;
-
-import static org.mockito.BDDMockito.given;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.*;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.*;
 
@@ -24,7 +21,6 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 public class TaskControllerTest {
 
     private MockMvc mockMvc;
-
     @Mock
     private TaskRepository taskRepository;
 
@@ -44,8 +40,7 @@ public class TaskControllerTest {
 
         mockMvc.perform(get("/tasks"))
                 .andExpect(status().isOk())
-                .andExpect(content().contentType(MediaType.APPLICATION_JSON))
-        ;
+                .andExpect(content().contentType(MediaType.APPLICATION_JSON));
     }
 
 
@@ -56,8 +51,7 @@ public class TaskControllerTest {
         mockMvc.perform(post("/tasks")
                         .contentType(MediaType.APPLICATION_JSON)
                         .content(new ObjectMapper().writeValueAsString(newTask)))
-                .andExpect(status().isOk())
-        ;
+                .andExpect(status().isOk());
     }
 
     @Test
@@ -68,17 +62,14 @@ public class TaskControllerTest {
         mockMvc.perform(put("/tasks/{id}", 1L)
                         .contentType(MediaType.APPLICATION_JSON)
                         .content(new ObjectMapper().writeValueAsString(updatedTask)))
-                .andExpect(status().isOk())
-        ;
+                .andExpect(status().isOk());
     }
 
     @Test
     public void deleteTaskTest() throws Exception {
 
         mockMvc.perform(delete("/tasks/{id}", 1L))
-                .andExpect(status().isOk())
-
-        ;
+                .andExpect(status().isOk());
     }
 
 }
