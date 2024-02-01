@@ -13,6 +13,8 @@ import org.springframework.context.annotation.Configuration;
 public class LoadDatabase {
     private static final Logger log = LoggerFactory.getLogger(LoadDatabase.class);
 
+
+    //check if it exists first
     @Bean
     CommandLineRunner initDatabase(TaskRepository taskRepository) {
         return args -> {

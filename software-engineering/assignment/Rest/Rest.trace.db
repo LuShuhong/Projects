@@ -1,0 +1,6 @@
+2024-01-30 10:27:23.598601Z jdbc[13]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "TASKS" not found; SQL statement:
+select * from tasks [42102-224]
+2024-01-30 10:27:49.667875Z jdbc[13]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "TASKS" not found; SQL statement:
+select * from Tasks [42102-224]
