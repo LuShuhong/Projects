@@ -146,15 +146,12 @@ Though one of the early criticism of Neo4j, later editions offer extensive clust
 
 ## Position in the CAP Model
 
-Neo4j aligns with the **Consistency and Partition Tolerance** aspects of the CAP theorem. [More details](https://www.geeksforgeeks.org/the-cap-theorem-in-dbms/)
-
-[What about this](https://neo4j.com/blog/recap-intro-to-graph-databases-webinar-series-1/)
+Neo4j aligns with the **Consistency and Availability** aspects of the CAP theorem. [More details](https://www.geeksforgeeks.org/the-cap-theorem-in-dbms/)
 
 - **Consistency**: Neo4j ensures that all database clients see the same data at the same time, maintaining a high level of data accuracy.
-- **Partition Tolerance**: It can function across a distributed network, ensuring continuous operation despite possible node failures.
+- **Availability**: Availability means that any client making a request for data gets a response, even if one or more nodes are down. Another way to state this—all working nodes in the distributed system return a valid response for any request, without exception.
 
-The trade-off is in terms of Availability in some scenarios, where the system may sacrifice immediate data availability to maintain consistency.
-
+The trade-off is in terms of partition tolerance in some scenarios, where the system may suffer a partitioning through events such as a network outage.
 ---
 
 - Neo4j aura designed to be always on and available, with all corrections, fixes, and upgrades automatically applied in the background. Releases for the Neo4j database are also deployed when they become available. Operations are non-disruptive, and you shouldn't experience downtime as a result
