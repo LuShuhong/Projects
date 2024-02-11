@@ -1,3 +1,5 @@
+--Alternatively, create the table in DataLoader using CommandLineRunner
+
 CREATE TABLE IF NOT EXISTS Task (
     id INTEGER AUTO_INCREMENT,
     task_name varchar(255) NOT NULL,

@@ -16,4 +16,10 @@ public interface TaskRepository extends ListCrudRepository<Task,Integer> {
             WHERE status = :status
             """)
     List<Task> listByStatus(@Param("status") Status status);
+
+    @Query("""
+            SELECT * FROM Task
+            ORDER BY priority
+            """)
+    List<Task> sortByPriority();
 }

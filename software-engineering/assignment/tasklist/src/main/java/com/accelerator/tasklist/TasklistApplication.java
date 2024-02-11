@@ -19,21 +19,5 @@ public class TasklistApplication {
 		SpringApplication.run(TasklistApplication.class, args);
 	}
 
-	@Bean
-	CommandLineRunner commandLineRunner(TaskRepository repository) {
-		return args -> {
-			Task task = new Task(
-					null,
-					"Shopping",
-					"Go Grocery Shopping on Saturday",
-					Status.IN_PROGRESS,
-					5,
-					LocalDateTime.now(),
-					null
 
-			);
-
-			repository.save(task);
-		};
-	}
 }

@@ -3,8 +3,11 @@ package com.accelerator.tasklist.controller;
 import com.accelerator.tasklist.model.Status;
 import com.accelerator.tasklist.model.Task;
 import com.accelerator.tasklist.repository.TaskRepository;
+import com.accelerator.tasklist.service.TaskService;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.jdbc.repository.query.Query;
+import org.springframework.data.repository.query.Param;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.server.ResponseStatusException;
@@ -15,53 +18,56 @@ import java.util.List;
 @RequestMapping("api/task")
 @CrossOrigin
 public class TaskController {
-
-    private final TaskRepository repository;
+    private final TaskService taskService;
 
     @Autowired
-    public TaskController(TaskRepository repository) {
-        this.repository = repository;
+    public TaskController(TaskService taskService) {
+        this.taskService = taskService;
     }
 
     @GetMapping("")
     public List<Task> findAll() {
-        return repository.findAll();
+        return taskService.findAll();
     }
 
     @GetMapping("/{id}")
     public Task findById(@PathVariable Integer id) {
-        return repository.findById(id).orElseThrow( () -> new ResponseStatusException(HttpStatus.NOT_FOUND,"Task not Found!"));
+        return taskService.findById(id).orElseThrow( () -> new ResponseStatusException(HttpStatus.NOT_FOUND,"Task not Found!"));
     }
 
     @ResponseStatus(HttpStatus.CREATED)
     @PostMapping("")
     public void create(@Valid @RequestBody Task task) {
-        repository.save(task);
+        taskService.save(task);
     }
 
     @ResponseStatus(HttpStatus.NO_CONTENT)
     @PutMapping("/{id}")
     public void update(@RequestBody Task task, @PathVariable Integer id) {
-        if(!repository.existsById(id)) {
+        if(!taskService.existsById(id)) {
             throw new ResponseStatusException(HttpStatus.NOT_FOUND,"Task not Found!");
         }
-        repository.save(task);
+        taskService.save(task);
     }
 
     @ResponseStatus(HttpStatus.NO_CONTENT)
     @DeleteMapping("/{id}")
     public void delete(@PathVariable Integer id) {
-        repository.deleteById(id);
+        taskService.deleteById(id);
     }
 
-    @GetMapping("/filter/{taskName}")
+    @GetMapping("/filter/task_name/{taskName}")
     public List<Task> findByTaskName(@PathVariable String taskName) {
-        return repository.findAllByTaskNameContains(taskName);
+        return taskService.findAllByTaskNameContains(taskName);
     }
 
     @GetMapping("/filter/status/{status}")
     public List<Task> findByStatus(@PathVariable Status status) {
-        return repository.listByStatus(status);
+        return taskService.listByStatus(status);
     }
 
+    @GetMapping("/priority")
+    public List<Task> sortByPriority() {
+        return taskService.sortByPriority();
+    }
 }
