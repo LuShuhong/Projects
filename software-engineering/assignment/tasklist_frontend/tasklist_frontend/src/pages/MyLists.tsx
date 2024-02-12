@@ -2,11 +2,11 @@ import React, { useEffect, useState } from "react";
 import "./MyLists.css";
 import { List, listInterface } from "../components/list/List";
 
-interface myWishListProps {
+interface myListProps {
   pathToGetLists: string;
 }
 
-export const MyWishList: React.FC<myWishListProps> = (props) => {
+export const MyWishList: React.FC<myListProps> = (props) => {
   const [lists, setList] = useState<listInterface[]>([]);
 
   const fetchLists = async (url: string): Promise<void> => {
@@ -26,11 +26,10 @@ export const MyWishList: React.FC<myWishListProps> = (props) => {
   if (lists) {
     return (
       <div className="lists">
-        <h1 className="heading">My Lists</h1>
+        <h1 className="heading">My Tasks</h1>
         {lists.map((list) => {
           return (
             <List
-          
               created_at={list.dateCreated}
               description={list.desc}
               priority={list.priority}

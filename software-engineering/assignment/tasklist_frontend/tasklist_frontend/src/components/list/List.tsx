@@ -1,6 +1,7 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import "./List.css";
 import { deleteFuntion } from "../../hooks/deleteUtility";
+import { useNavigate } from "react-router-dom";
 
 interface listProps {
   created_at: string;
@@ -22,8 +23,13 @@ export interface listInterface {
 }
 
 export const List: React.FC<listProps> = (props) => {
+  let navigate = useNavigate();
   const handleDelete = async () => {
     deleteFuntion(props.url, props.id);
+  };
+
+  const handleEdit = async () => {
+    navigate("../create-list");
   };
 
   return (
@@ -34,6 +40,9 @@ export const List: React.FC<listProps> = (props) => {
       <p>Priority: {props.priority}</p>
       <p>Description: {props.description}</p>
       <p>Created at: {props.created_at}</p>
+      <button className="editButton" onClick={handleEdit}>
+        Edit
+      </button>
       <button className="deleteButton" onClick={handleDelete}>
         Delete
       </button>

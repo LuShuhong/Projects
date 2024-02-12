@@ -1,10 +1,11 @@
-import React, {MouseEvent, FC} from "react";
+import React, {MouseEvent} from "react";
 import "./Button.css";
 import { useNavigate } from "react-router-dom";
 
 interface Props {
   text: string;
   path:string;
+  onClick:(()=> void) | null;
 }
 
 export const Button: React.FC<Props> = ({path,text}) => {
