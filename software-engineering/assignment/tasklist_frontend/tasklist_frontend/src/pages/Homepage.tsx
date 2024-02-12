@@ -11,7 +11,7 @@ export const Homepage: React.FC = () => {
           <div className="Home-page-button">
             <Button text="Create task" path="/create-list"></Button>
             <Button text="My tasks" path="/my-lists"></Button>
-            <Button text="Just Browsing" path="/products"></Button>
+            <Button text="Find a task" path="/find"></Button>
           </div>
         </header>
       </div>

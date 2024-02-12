@@ -1,26 +1,24 @@
 import React, { useEffect, useState } from "react";
-import { productInterface } from "../product/Product";
-import { Button } from "../button/Button";
 import "./List.css";
 import { deleteFuntion } from "../../hooks/deleteUtility";
 
 interface listProps {
   created_at: string;
-  from: string;
-  message_for_santa: string;
-  behaviour_score: number;
+  status: string;
+  description: string;
+  priority: number;
   item_names: string;
   id: string;
   url: string;
 }
 
 export interface listInterface {
-  created_at: string;
-  from: string;
-  message_for_santa: string;
-  behaviour_score: number;
-  item_names: string;
   id: string;
+  taskName: string;
+  status: string;
+  priority: number;
+  dateCreated: string;
+  desc: string;
 }
 
 export const List: React.FC<listProps> = (props) => {
@@ -30,11 +28,12 @@ export const List: React.FC<listProps> = (props) => {
 
   return (
     <div className="eachList">
+      <p>ID:{props.id} </p>
+      <p>Task: {props.item_names}</p>
+      <p>Status: {props.status}</p>
+      <p>Priority: {props.priority}</p>
+      <p>Description: {props.description}</p>
       <p>Created at: {props.created_at}</p>
-      <p>From: {props.from}</p>
-      <p>Behaviour score: {props.behaviour_score}</p>
-      <p>Message: {props.message_for_santa}</p>
-      <p>List: {props.item_names}</p>
       <button className="deleteButton" onClick={handleDelete}>
         Delete
       </button>

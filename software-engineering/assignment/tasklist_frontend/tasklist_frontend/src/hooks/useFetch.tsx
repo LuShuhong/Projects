@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from "react";
 import { productInterface } from "../components/product/Product";
-import { listInterface } from "../components/list/List";
 
 // interface Props{
 //     url:string;

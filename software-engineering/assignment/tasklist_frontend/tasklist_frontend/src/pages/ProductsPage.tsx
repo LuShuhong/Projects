@@ -2,7 +2,6 @@ import React from "react";
 import "./ProductsPage.css";
 import { useFetch } from "../hooks/useFetch";
 import { Product } from "../components/product/Product";
-import { productInterface } from "../components/product/Product";
 
 interface productPageProps {
   baseUrl: string;

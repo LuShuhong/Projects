@@ -7,7 +7,7 @@ interface Props {
 }
 
 export const CreateList: React.FC<Props> = (props) => {
-  const currentDate = new Date().toLocaleDateString();
+  const currentDate = new Date().toISOString();
 
   const handleSubmit = async (event: React.FormEvent) => {
     const form = event.target as HTMLFormElement;
@@ -18,6 +18,7 @@ export const CreateList: React.FC<Props> = (props) => {
     });
 
     await postFunction(props.urlToSend, jsonObject);
+    console.log(jsonObject);
   };
 
   return (
@@ -26,40 +27,40 @@ export const CreateList: React.FC<Props> = (props) => {
       <form onSubmit={handleSubmit}>
         <ul>
           <li>
-            <label htmlFor="date">Date:</label>
+            <label htmlFor="dateCreated">Date:</label>
             <input
               type="text"
-              id="date"
-              name="created_at"
+              id="dateCreated"
+              name="dateCreated"
               value={currentDate}
               readOnly
             />
           </li>
 
           <li>
-            <label htmlFor="name">Task:</label>
-            <input type="text" id="name" name="from" />
+            <label htmlFor="taskName">Task:</label>
+            <input type="text" id="taskName" name="taskName" />
           </li>
 
           <li>
-            <label htmlFor="score">Priority: </label>
-            <input type="number" id="score" name="behaviour_score" />
+            <label htmlFor="priority">Priority: </label>
+            <input type="number" id="priority" name="priority" />
           </li>
 
           <li>
-            <label htmlFor="message">Status: </label>
+            <label htmlFor="status">Status: </label>
             <textarea
-              id="message"
-              name="message_for_santa"
+              id="status"
+              name="status"
               defaultValue="COMPLETED/IN_PROGRESS"
             ></textarea>
           </li>
 
           <li>
-            <label htmlFor="items">Description: </label>
+            <label htmlFor="desc">Description: </label>
             <textarea
-              id="items"
-              name="item_names"
+              id="desc"
+              name="desc"
               defaultValue="Write Anything"
             ></textarea>
           </li>

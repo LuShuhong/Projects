@@ -30,11 +30,12 @@ export const MyWishList: React.FC<myWishListProps> = (props) => {
         {lists.map((list) => {
           return (
             <List
-              created_at={list.created_at}
-              message_for_santa={list.message_for_santa}
-              behaviour_score={list.behaviour_score}
-              from={list.from}
-              item_names={list.item_names}
+          
+              created_at={list.dateCreated}
+              description={list.desc}
+              priority={list.priority}
+              status={list.status}
+              item_names={list.taskName}
               id={list.id}
               url={props.pathToGetLists}
             />
