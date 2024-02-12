@@ -24,8 +24,8 @@ public class TaskService {
         return repository.findById(id);
     }
 
-    public void save(Task task) {
-        repository.save(task);
+    public Task save(Task task) {
+        return repository.save(task);
     }
 
     public boolean existsById(Integer id) {

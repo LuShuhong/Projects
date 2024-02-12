@@ -37,17 +37,17 @@ public class TaskController {
 
     @ResponseStatus(HttpStatus.CREATED)
     @PostMapping("")
-    public void create(@Valid @RequestBody Task task) {
-        taskService.save(task);
+    public Task create(@Valid @RequestBody Task task) {
+        return taskService.save(task);
     }
 
     @ResponseStatus(HttpStatus.NO_CONTENT)
     @PutMapping("/{id}")
-    public void update(@RequestBody Task task, @PathVariable Integer id) {
+    public Task update(@RequestBody Task task, @PathVariable Integer id) {
         if(!taskService.existsById(id)) {
             throw new ResponseStatusException(HttpStatus.NOT_FOUND,"Task not Found!");
         }
-        taskService.save(task);
+        return taskService.save(task);
     }
 
     @ResponseStatus(HttpStatus.NO_CONTENT)
