@@ -21,7 +21,7 @@ export const MyWishList: React.FC<myListProps> = (props) => {
 
   useEffect(() => {
     fetchLists(props.pathToGetLists);
-  }, [lists]);
+  }, [props.pathToGetLists]);
 
   if (lists) {
     return (
@@ -30,11 +30,11 @@ export const MyWishList: React.FC<myListProps> = (props) => {
         {lists.map((list) => {
           return (
             <List
-              created_at={list.dateCreated}
-              description={list.desc}
+              dateCreated={list.dateCreated}
+              desc={list.desc}
               priority={list.priority}
               status={list.status}
-              item_names={list.taskName}
+              taskName={list.taskName}
               id={list.id}
               url={props.pathToGetLists}
             />
