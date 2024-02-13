@@ -6,8 +6,7 @@
       "desc": "Go Grocery Shopping on Saturday",
       "status": "COMPLETED",
       "priority": 5,
-      "dateCreated":"2024-02-11T10:20:16.741335",
-      "dateUpdated": null
+      "dateCreated":"2024-02-11T10:20:16.741335"
     },
   {
     "id": null,
@@ -15,8 +14,7 @@
     "desc": "Go Grocery Shopping on Saturday",
     "status": "COMPLETED",
     "priority": 2,
-    "dateCreated":"2024-02-11T10:20:16.741335",
-    "dateUpdated": null
+    "dateCreated":"2024-02-11T10:20:16.741335"
   },
   {
     "id": null,
@@ -24,8 +22,7 @@
     "desc": "Go Grocery Shopping on Saturday",
     "status": "COMPLETED",
     "priority": 3,
-    "dateCreated":"2024-02-11T10:20:16.741335",
-    "dateUpdated": null
+    "dateCreated":"2024-02-11T10:20:16.741335"
   },
   {
     "id": null,
@@ -33,8 +30,7 @@
     "desc": "Go Grocery Shopping on Saturday",
     "status": "COMPLETED",
     "priority": 1,
-    "dateCreated":"2024-02-11T10:20:16.741335",
-    "dateUpdated": null
+    "dateCreated":"2024-02-11T10:20:16.741335"
   },
   {
     "id": null,
@@ -42,8 +38,7 @@
     "desc": "Go Grocery Shopping on Saturday",
     "status": "COMPLETED",
     "priority": 8,
-    "dateCreated":"2024-02-11T10:20:16.741335",
-    "dateUpdated": null
+    "dateCreated":"2024-02-11T10:20:16.741335"
   }
 ]
 

@@ -2,13 +2,12 @@ package com.accelerator.tasklist.controller;
 
 import com.accelerator.tasklist.model.Status;
 import com.accelerator.tasklist.model.Task;
-import com.accelerator.tasklist.repository.TaskRepository;
 import com.accelerator.tasklist.service.TaskService;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.data.jdbc.repository.query.Query;
-import org.springframework.data.repository.query.Param;
+import org.springframework.boot.context.config.ConfigDataResourceNotFoundException;
 import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.server.ResponseStatusException;
 
@@ -41,14 +40,24 @@ public class TaskController {
         return taskService.save(task);
     }
 
-    @ResponseStatus(HttpStatus.NO_CONTENT)
     @PutMapping("/{id}")
-    public Task update(@RequestBody Task task, @PathVariable Integer id) {
-        if(!taskService.existsById(id)) {
-            throw new ResponseStatusException(HttpStatus.NOT_FOUND,"Task not Found!");
-        }
-        return taskService.save(task);
+    public Task update(@Valid @RequestBody Task task, @PathVariable Integer id) {
+
+        return taskService.findById(id)
+                .map( existingTask -> new Task(
+                        existingTask.id(),
+                        task.taskName(),
+                        task.desc(),
+                        task.status(),
+                        task.priority(),
+                        task.dateCreated()
+                        ))
+                .map(taskService::save)
+                .orElseThrow(() -> new ResponseStatusException(HttpStatus.NOT_FOUND,"Task not Found!"));
     }
+
+
+
 
     @ResponseStatus(HttpStatus.NO_CONTENT)
     @DeleteMapping("/{id}")

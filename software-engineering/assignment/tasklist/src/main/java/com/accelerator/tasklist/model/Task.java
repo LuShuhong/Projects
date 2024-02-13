@@ -15,7 +15,7 @@ public record Task(
         Status status,
 
         int priority,
-        LocalDateTime dateCreated,
-        LocalDateTime dateUpdated
+        LocalDateTime dateCreated
 ) {
+
 }

@@ -7,7 +7,6 @@ CREATE TABLE IF NOT EXISTS Task (
     status VARCHAR(20) NOT NULL,
     priority INTEGER NOT NULL,
     date_created TIMESTAMP NOT NULL,
-    date_updated TIMESTAMP,
     primary key (id)
 );
 
