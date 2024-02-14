@@ -25,3 +25,11 @@
   position: relative;
   left: 50%;
 }
+
+.editMode {
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
+  position: relative;
+  left: 40%;
+}

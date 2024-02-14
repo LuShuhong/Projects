@@ -59,6 +59,8 @@ export const List: React.FC<listProps> = (props) => {
     <div className="eachList">
       {isEditMode ? (
         <>
+        <div className="editMode">
+          
           <input name="id" value={editedTask.id} readOnly />
           <input
             name="taskName"
@@ -81,7 +83,8 @@ export const List: React.FC<listProps> = (props) => {
             value={editedTask.desc}
             onChange={handleChange}
           />
-          <button className="saveButton" onClick={handleSave}>
+          </div>
+          <button className="editButton" onClick={handleSave}>
             Save
           </button>
         </>
